@@ -1,12 +1,16 @@
-import { Text, View } from "react-native";
+import { Keyboard, View } from "react-native";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 import { styles } from "./NavigationScreen.style";
+import LocationInput from "../../components/LocationInput/LocationInput.component";
 
 const NavigationScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text>Navigation Screen</Text>
-    </View>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View style={styles.container}>
+        <LocationInput placeholder="Location" />
+      </View>
+    </TouchableWithoutFeedback>
   );
 };
 
