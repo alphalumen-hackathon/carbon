@@ -8,17 +8,25 @@ const RouteModal = (props: IRouteModalProps) => {
 
   return (
     <View style={styles.modalContainer}>
-      <Text>FROM TO</Text>
+      <Text style={{ fontWeight: "bold" }}>FROM LOCATION / TO LOCATION</Text>
       <View style={styles.vehicleIconsContainer}>
         {props.routeData.vehicleIconsData}
       </View>
 
-      <Pressable
-        onPress={() => closeModalFunction(false)}
-        style={styles.modalCloseButton}
-      >
-        <Text>Close</Text>
-      </Pressable>
+      <View style={styles.buttonAreaContainer}>
+        <Pressable
+          onPress={() => closeModalFunction(false)}
+          style={styles.modalActionButton}
+        >
+          <Text style={{ fontWeight: "bold" }}>Close</Text>
+        </Pressable>
+        <Pressable
+          onPress={() => closeModalFunction(false)}
+          style={styles.modalActionButton}
+        >
+          <Text style={{ fontWeight: "bold" }}>Select Route</Text>
+        </Pressable>
+      </View>
     </View>
   );
 };

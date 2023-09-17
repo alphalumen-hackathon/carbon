@@ -17,7 +17,7 @@ const Route = (props: IRouteProps) => {
     >
       <View style={styles.container}>
         <Modal
-          animationType="slide"
+          animationType="fade"
           visible={modalVisible}
           transparent
           onRequestClose={() => {
