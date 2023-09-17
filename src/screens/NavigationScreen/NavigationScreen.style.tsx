@@ -13,6 +13,8 @@ export const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.02)",
+    borderBottomWidth: 1,
   },
   textInput: {
     margin: 5,
