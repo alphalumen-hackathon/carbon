@@ -7,7 +7,7 @@ import { styles } from "./Route.style";
 import RouteModal from "../RouteModal/RouteModal.component";
 
 const Route = (props: IRouteProps) => {
-  const { icons } = props;
+  const { vehicleIconsData } = props.routeData;
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -25,7 +25,7 @@ const Route = (props: IRouteProps) => {
         <RouteModal closeModalFunction={setModalVisible} />
       </Modal>
       <View style={styles.container}>
-        <View>{icons}</View>
+        <View>{vehicleIconsData}</View>
         <View style={styles.carbonDisplayColumn}>
           <MaterialIcons name="attach-money" size={24} color="black" />
           <Text>-50</Text>

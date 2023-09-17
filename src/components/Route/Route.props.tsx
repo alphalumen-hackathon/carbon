@@ -1,5 +1,5 @@
-import React from "react";
+import { RouteData } from "../../interfaces/RouteData";
 
 export interface IRouteProps {
-  icons: React.JSX.Element[];
+  routeData: RouteData;
 }

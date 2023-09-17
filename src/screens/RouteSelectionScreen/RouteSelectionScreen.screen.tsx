@@ -31,7 +31,12 @@ const RouteSelectionScreen = () => {
           }}
         >
           <Route
-            icons={[<FontAwesome5 name="car-side" size={24} color="black" />]}
+            routeData={{
+              vehicleIconsData: [
+                <FontAwesome5 name="car-side" size={24} color="black" />,
+              ],
+              vehiclesData: [],
+            }}
           />
         </ScrollView>
       </View>
