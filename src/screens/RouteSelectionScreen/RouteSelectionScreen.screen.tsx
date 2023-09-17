@@ -1,7 +1,9 @@
 import { View, Text } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 import MapView from "react-native-maps";
 
 import { styles } from "./RouteSelectionScreen.styles";
+import Route from "../../components/Route/Route.components";
 
 const RouteSelectionScreen = () => {
   return (
@@ -16,7 +18,19 @@ const RouteSelectionScreen = () => {
         }}
       />
       <View style={styles.routeSelectionContainer}>
-        <Text>TEXT</Text>
+        <Text style={styles.routeSelectionTitle}>
+          Select the optimal route for you today.
+        </Text>
+        <ScrollView
+          style={{ width: "100%" }}
+          contentContainerStyle={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Route />
+        </ScrollView>
       </View>
     </View>
   );
