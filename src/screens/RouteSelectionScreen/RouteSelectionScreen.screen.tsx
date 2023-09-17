@@ -36,6 +36,7 @@ const RouteSelectionScreen = () => {
                 <FontAwesome5 name="car-side" size={24} color="black" />,
               ],
               vehiclesData: [],
+              carbonValue: -100,
             }}
           />
         </ScrollView>
