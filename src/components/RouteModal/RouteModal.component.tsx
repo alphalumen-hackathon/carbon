@@ -8,7 +8,11 @@ const RouteModal = (props: IRouteModalProps) => {
 
   return (
     <View style={styles.modalContainer}>
-      <Text>Route Modal</Text>
+      <Text>FROM TO</Text>
+      <View style={styles.vehicleIconsContainer}>
+        {props.routeData.vehicleIconsData}
+      </View>
+
       <Pressable
         onPress={() => closeModalFunction(false)}
         style={styles.modalCloseButton}

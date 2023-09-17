@@ -15,16 +15,20 @@ const Route = (props: IRouteProps) => {
       style={styles.externContainer}
       onPress={() => setModalVisible(true)}
     >
-      <Modal
-        animationType="slide"
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(false);
-        }}
-      >
-        <RouteModal closeModalFunction={setModalVisible} />
-      </Modal>
       <View style={styles.container}>
+        <Modal
+          animationType="slide"
+          visible={modalVisible}
+          transparent
+          onRequestClose={() => {
+            setModalVisible(false);
+          }}
+        >
+          <RouteModal
+            closeModalFunction={setModalVisible}
+            routeData={props.routeData}
+          />
+        </Modal>
         <View style={styles.vehicleIconsContainer}>{vehicleIconsData}</View>
         <View style={styles.carbonDisplayColumn}>
           <MaterialIcons name="attach-money" size={24} color="black" />
