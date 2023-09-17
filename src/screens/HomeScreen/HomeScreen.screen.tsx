@@ -1,5 +1,4 @@
 import { View } from "react-native";
-// import MapView from "react-native-maps";
 
 import { IHomeScreenProps } from "./HomeScreen.props";
 import { styles } from "./HomeScreen.style";
