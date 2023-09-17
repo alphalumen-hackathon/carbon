@@ -13,11 +13,6 @@ export const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
-    shadowColor: "black",
-    shadowOffset: { width: 3, height: 4 },
-    shadowOpacity: 0.2,
-    shadowRadius: 2,
-    marginBottom: 10,
   },
   textInput: {
     margin: 5,

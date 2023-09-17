@@ -1,10 +1,11 @@
-import { Keyboard, View, Text } from "react-native";
+import { Keyboard, View } from "react-native";
 import {
   ScrollView,
   TouchableWithoutFeedback,
 } from "react-native-gesture-handler";
 
 import { styles } from "./NavigationScreen.style";
+import CommonLocation from "../../components/CommonLocation/CommonLocation.component";
 import LocationInput from "../../components/LocationInput/LocationInput.component";
 
 const NavigationScreen = () => {
@@ -19,7 +20,18 @@ const NavigationScreen = () => {
           style={styles.locationScrollView}
           contentContainerStyle={styles.locationScrollViewContent}
         >
-          <Text>Element</Text>
+          <CommonLocation />
+          <CommonLocation />
+          <CommonLocation />
+          <CommonLocation />
+          <CommonLocation />
+          <CommonLocation />
+          <CommonLocation />
+          <CommonLocation />
+          <CommonLocation />
+          <CommonLocation />
+          <CommonLocation />
+          <CommonLocation />
         </ScrollView>
       </View>
     </TouchableWithoutFeedback>
