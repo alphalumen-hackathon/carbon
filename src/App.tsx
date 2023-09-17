@@ -1,17 +1,34 @@
 import "react-native-gesture-handler";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
 import { NavigationContainer } from "@react-navigation/native";
+// eslint-disable-next-line import/order
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
 
 import HomeScreen from "./screens/HomeScreen/HomeScreen.screen";
 
-const App = () => {
+const Home = () => {
   const Tab = createBottomTabNavigator();
 
   return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} />
+    </Tab.Navigator>
+  );
+};
+
+const App = () => {
+  const Stack = createStackNavigator();
+
+  return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-      </Tab.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="HomePage"
+          component={Home}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
