@@ -5,10 +5,10 @@ import { ICommonLocationProps } from "./CommonLocation.props";
 import { styles } from "./CommonLocation.style";
 
 const CommonLocation = (props: ICommonLocationProps) => {
-  const { name, address } = props;
+  const { name, address, onPress } = props;
 
   return (
-    <Pressable style={styles.container} onPress={() => console.log("LOG")}>
+    <Pressable style={styles.container} onPress={onPress}>
       <View>
         <Entypo name="location-pin" size={24} color="black" />
       </View>
