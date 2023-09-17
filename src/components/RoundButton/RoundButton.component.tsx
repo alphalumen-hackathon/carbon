@@ -1,13 +1,15 @@
 import { Pressable, Text } from "react-native";
 import { IRoundButtonProps } from "./RoundButton.props";
 import { styles } from "./RoundButton.style";
+import { AntDesign } from "@expo/vector-icons";
 
 const RoundButton = (props: IRoundButtonProps) => {
   const { style, onPress, text } = props;
 
   return (
     <Pressable onPress={onPress} style={[styles.button, style?? null]}>
-      <Text>{text}</Text>
+      <AntDesign name="search1" size={24} color="black"/>
+      <Text style={styles.text}>{text}</Text>
     </Pressable>
   );
 }
