@@ -28,4 +28,13 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  commonLocationsTitleContainer: {
+    display: "flex",
+    margin: 4,
+    borderWidth: 2,
+    width: "98%",
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "center",
+  },
 });

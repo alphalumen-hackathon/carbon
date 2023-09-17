@@ -20,18 +20,17 @@ const NavigationScreen = () => {
           style={styles.locationScrollView}
           contentContainerStyle={styles.locationScrollViewContent}
         >
-          <CommonLocation />
-          <CommonLocation />
-          <CommonLocation />
-          <CommonLocation />
-          <CommonLocation />
-          <CommonLocation />
-          <CommonLocation />
-          <CommonLocation />
-          <CommonLocation />
-          <CommonLocation />
-          <CommonLocation />
-          <CommonLocation />
+          <CommonLocation name="Name" address="Address" />
+          <CommonLocation name="Name" address="Address" />
+          <CommonLocation name="Name" address="Address" />
+          <CommonLocation name="Name" address="Address" />
+          <CommonLocation name="Name" address="Address" />
+          <CommonLocation name="Name" address="Address" />
+          <CommonLocation name="Name" address="Address" />
+          <CommonLocation name="Name" address="Address" />
+          <CommonLocation name="Name" address="Address" />
+          <CommonLocation name="Name" address="Address" />
+          <CommonLocation name="Name" address="Address" />
         </ScrollView>
       </View>
     </TouchableWithoutFeedback>
