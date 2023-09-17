@@ -25,7 +25,7 @@ const Route = (props: IRouteProps) => {
         <RouteModal closeModalFunction={setModalVisible} />
       </Modal>
       <View style={styles.container}>
-        <View>{vehicleIconsData}</View>
+        <View style={styles.vehicleIconsContainer}>{vehicleIconsData}</View>
         <View style={styles.carbonDisplayColumn}>
           <MaterialIcons name="attach-money" size={24} color="black" />
           <Text>{String(carbonValue)}</Text>

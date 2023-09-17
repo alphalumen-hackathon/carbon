@@ -27,5 +27,11 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     padding: 10,
     backgroundColor: "#dbdbdb",
+    margin: 5,
+  },
+  vehicleIconsContainer: {
+    display: "flex",
+    flexDirection: "row",
+    gap: 8,
   },
 });
