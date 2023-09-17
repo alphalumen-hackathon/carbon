@@ -7,8 +7,8 @@ const LocationInput = (props: ILocationInputProps) => {
   const { savedLocation, placeholder, containerStyle } = props;
 
   return (
-    <View style={[styles.inputContainer, containerStyle ?? null]}>
-      <TextInput value={savedLocation ?? ""} placeholder={placeholder} />
+    <View style={[styles.inputContainer, containerStyle]}>
+      <TextInput value={savedLocation} placeholder={placeholder} />
     </View>
   );
 };
