@@ -1,3 +1,4 @@
+import { FontAwesome5 } from "@expo/vector-icons";
 import { View, Text } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import MapView from "react-native-maps";
@@ -29,7 +30,9 @@ const RouteSelectionScreen = () => {
             alignItems: "center",
           }}
         >
-          <Route />
+          <Route
+            icons={[<FontAwesome5 name="car-side" size={24} color="black" />]}
+          />
         </ScrollView>
       </View>
     </View>

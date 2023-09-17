@@ -1,11 +1,13 @@
-import { FontAwesome5, MaterialIcons } from "@expo/vector-icons";
-import { useState } from "react";
+import { MaterialIcons } from "@expo/vector-icons";
+import React, { useState } from "react";
 import { View, Text, Pressable, Modal } from "react-native";
 
+import { IRouteProps } from "./Route.props";
 import { styles } from "./Route.style";
 import RouteModal from "../RouteModal/RouteModal.component";
 
-const Route = () => {
+const Route = (props: IRouteProps) => {
+  const { icons } = props;
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -23,9 +25,7 @@ const Route = () => {
         <RouteModal closeModalFunction={setModalVisible} />
       </Modal>
       <View style={styles.container}>
-        <View>
-          <FontAwesome5 name="car-side" size={24} color="black" />
-        </View>
+        <View>{icons}</View>
         <View style={styles.carbonDisplayColumn}>
           <MaterialIcons name="attach-money" size={24} color="black" />
           <Text>-50</Text>
