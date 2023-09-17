@@ -3,6 +3,7 @@ import { useState } from "react";
 import { View, Text, Pressable, Modal } from "react-native";
 
 import { styles } from "./Route.style";
+import RouteModal from "../RouteModal/RouteModal.component";
 
 const Route = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -19,15 +20,7 @@ const Route = () => {
           setModalVisible(false);
         }}
       >
-        <View style={styles.modalContainer}>
-          <Text>Route Modal</Text>
-          <Pressable
-            onPress={() => setModalVisible(false)}
-            style={styles.modalCloseButton}
-          >
-            <Text>Close</Text>
-          </Pressable>
-        </View>
+        <RouteModal closeModalFunction={setModalVisible} />
       </Modal>
       <View style={styles.container}>
         <View>
