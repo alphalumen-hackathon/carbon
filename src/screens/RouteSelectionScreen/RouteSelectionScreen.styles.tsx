@@ -21,9 +21,16 @@ export const styles = StyleSheet.create({
     position: "absolute",
     left: 0,
     bottom: 0,
-    borderWidth: 2,
     backgroundColor: "white",
     width: "100%",
     height: "45%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  routeSelectionTitle: {
+    margin: 3,
+    fontWeight: "bold",
+    marginBottom: 25,
   },
 });

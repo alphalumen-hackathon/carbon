@@ -8,13 +8,4 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     height: "100%",
   },
-  // map: {
-  //   width: "100%",
-  //   height: "100%",
-  // },
-  // mapContainer: {
-  //   width: "90%",
-  //   height: "60%",
-  //   borderWidth: 2,
-  // },
 });
