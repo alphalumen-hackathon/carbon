@@ -3,39 +3,22 @@ import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 // eslint-disable-next-line import/order
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createStackNavigator } from "@react-navigation/stack";
-
 import CreditsScreen from "./src/screens/CreditsScreen/CreditsScreen.screen";
-import HomeScreen from "./src/screens/HomeScreen/HomeScreen.screen";
-import NavigationScreen from "./src/screens/NavigationScreen/NavigationScreen.screen";
-import RouteSelectionScreen from "./src/screens/RouteSelectionScreen/RouteSelectionScreen.screen";
 
 const Home = () => {
   const Tab = createBottomTabNavigator();
 
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Credits" component={CreditsScreen} />
+      <Tab.Screen name="Home" component={CreditsScreen} />
     </Tab.Navigator>
   );
 };
 
 const App = () => {
-  const Stack = createStackNavigator();
-
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="HomePage"
-          component={Home}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen name="Navigation" component={NavigationScreen} />
-        <Stack.Screen name="RouteSelection" component={RouteSelectionScreen} />
-        <Stack.Screen name="Credits" component={CreditsScreen} />
-      </Stack.Navigator>
+      <Home />
     </NavigationContainer>
   );
 };
