@@ -1,6 +1,6 @@
 import "react-native-gesture-handler";
 
-import { NavigationContainer } from "@react-navigation/native";
+import { DarkTheme, NavigationContainer } from "@react-navigation/native";
 // eslint-disable-next-line import/order
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import CreditsScreen from "./src/screens/CreditsScreen/CreditsScreen.screen";
@@ -17,7 +17,7 @@ const Home = () => {
 
 const App = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={DarkTheme}>
       <Home />
     </NavigationContainer>
   );

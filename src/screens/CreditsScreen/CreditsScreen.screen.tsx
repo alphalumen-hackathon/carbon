@@ -1,6 +1,7 @@
 import { ScrollView, Text, View } from "react-native";
 
 import { styles } from "./CreditsScreen.style";
+import CarbonCreditActivity from "../../components/CarbonCreditActivity/CarbonCreditActivity.component";
 
 const CreditsScreen = () => {
   return (
@@ -16,7 +17,13 @@ const CreditsScreen = () => {
         <ScrollView
           persistentScrollbar
           contentContainerStyle={styles.scrollableActivitiesArea}
-        />
+        >
+          <CarbonCreditActivity
+            credits={50}
+            description="Activity"
+            date={new Date()}
+          />
+        </ScrollView>
       </View>
     </View>
   );
