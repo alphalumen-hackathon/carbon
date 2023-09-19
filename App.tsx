@@ -5,10 +5,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import CreditsScreen from "./screens/CreditsScreen/CreditsScreen.screen";
-import HomeScreen from "./screens/HomeScreen/HomeScreen.screen";
-import NavigationScreen from "./screens/NavigationScreen/NavigationScreen.screen";
-import RouteSelectionScreen from "./screens/RouteSelectionScreen/RouteSelectionScreen.screen";
+import CreditsScreen from "./src/screens/CreditsScreen/CreditsScreen.screen";
+import HomeScreen from "./src/screens/HomeScreen/HomeScreen.screen";
+import NavigationScreen from "./src/screens/NavigationScreen/NavigationScreen.screen";
+import RouteSelectionScreen from "./src/screens/RouteSelectionScreen/RouteSelectionScreen.screen";
 
 const Home = () => {
   const Tab = createBottomTabNavigator();
