@@ -9,7 +9,7 @@ const CarbonCreditActivity = ({
   date,
 }: ICarbonCreditActivityProps) => {
   // Making the text red if it's negative credit
-  const creditsTextColor = credits < 0 ? "#FF5E5E" : "white";
+  const creditsTextColor = credits < 0 ? "#FF5E5E" : "#02D06D";
 
   return (
     <View style={styles.container}>

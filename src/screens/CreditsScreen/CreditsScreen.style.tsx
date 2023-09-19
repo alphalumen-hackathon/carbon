@@ -19,11 +19,11 @@ export const styles = StyleSheet.create({
   },
   carbonCreditsLabel: {
     color: "white",
-    fontSize: 24,
+    fontSize: 23,
     fontWeight: "bold",
   },
   carbonCreditsValue: {
-    color: "white",
+    color: "#02D06D",
     fontSize: 100,
     fontWeight: "bold",
   },
