@@ -1,17 +1,21 @@
 import { ScrollView, Text, View } from "react-native";
 
+import { styles } from "./CreditsScreen.style";
 import CarbonCreditActivity from "../../components/CarbonCreditActivity/CarbonCreditActivity.component";
 import CarbonActivities from "../../states/CarbonActivities.state";
-import { styles } from "./CreditsScreen.style";
 
 const CreditsScreen = () => {
-  const activities = CarbonActivities((state) => state.activities)
+  const activities = CarbonActivities((state) => state.activities);
 
   // Calculating total carbon credits by adding the credits of each activity
   // Credits can't be negative, so it's locked to zero
-  const carbonCredits = Math.max(0, activities.reduce((accumulated, activity) => (
-    accumulated + activity.credits
-  ), 0))
+  const carbonCredits = Math.max(
+    0,
+    activities.reduce(
+      (accumulated, activity) => accumulated + activity.credits,
+      0,
+    ),
+  );
 
   return (
     <View style={styles.container}>
@@ -27,7 +31,9 @@ const CreditsScreen = () => {
           persistentScrollbar
           contentContainerStyle={styles.scrollableActivitiesArea}
         >
-          {activities.map((activity, index) => <CarbonCreditActivity {...activity} key={index} />)}
+          {activities.map((activity, index) => (
+            <CarbonCreditActivity {...activity} key={index} />
+          ))}
         </ScrollView>
       </View>
     </View>
