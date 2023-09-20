@@ -26,6 +26,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "permissions": [
+      "ACCESS_BACKGROUND_LOCATION"
+    ]
   }
 }

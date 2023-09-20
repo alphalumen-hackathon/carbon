@@ -2,23 +2,20 @@ import "react-native-gesture-handler";
 
 import { DarkTheme, NavigationContainer } from "@react-navigation/native";
 // eslint-disable-next-line import/order
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { useEffect } from "react";
+import { ListenForSpeedChange } from "./src/controllers/SpeedController";
 import CreditsScreen from "./src/screens/CreditsScreen/CreditsScreen.screen";
 
-const Home = () => {
-  const Tab = createBottomTabNavigator();
-
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={CreditsScreen} />
-    </Tab.Navigator>
-  );
-};
 
 const App = () => {
+  useEffect(() => {
+    const trackSpeed = async () => (await ListenForSpeedChange())
+    trackSpeed().then(() => console.log("Tracking speed"))
+  }, [])
+  
   return (
     <NavigationContainer theme={DarkTheme}>
-      <Home />
+      <CreditsScreen />
     </NavigationContainer>
   );
 };
