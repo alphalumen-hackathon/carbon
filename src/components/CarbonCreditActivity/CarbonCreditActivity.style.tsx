@@ -2,24 +2,27 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
-    width: "90%",
+    marginHorizontal: 10,
     height: 70,
-    backgroundColor: "#1E1E1E",
+    backgroundColor: "#333",
     borderRadius: 8,
+    shadowColor: "#aaa",
+    shadowOffset: { width: 5, height: 7 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 4,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
   },
   left: {
-    height: "100%",
-    width: "60%",
+    flex: 2,
     display: "flex",
     justifyContent: "center",
     marginLeft: 15,
   },
   right: {
-    height: "100%",
-    width: "30%",
+    flex: 1,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

@@ -1,7 +1,5 @@
 import "react-native-gesture-handler";
-
 import { DarkTheme, NavigationContainer } from "@react-navigation/native";
-// eslint-disable-next-line import/order
 import { useEffect } from "react";
 import { ListenForSpeedChange } from "./src/controllers/SpeedController";
 import CreditsScreen from "./src/screens/CreditsScreen/CreditsScreen.screen";

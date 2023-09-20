@@ -16,12 +16,16 @@ const CarbonCreditActivity = ({
       <View style={styles.left}>
         <Text style={styles.description}>{description}</Text>
         <Text style={styles.date}>
-          {date.toLocaleString().replace(" ", " • ")}
+          {date.toLocaleString().replace(",", "").replace(" ", " • ")}
         </Text>
       </View>
       <View style={styles.right}>
         <Text style={styles.creditsLabel}>Credits</Text>
-        <Text style={[styles.credits, { color: creditsTextColor }]}>
+        <Text
+          adjustsFontSizeToFit
+          numberOfLines={1}
+          style={[styles.credits, { color: creditsTextColor }]}
+        >
           {credits}
         </Text>
       </View>
