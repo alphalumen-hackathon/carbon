@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     flex: 2,
     display: "flex",
     justifyContent: "center",
-    marginLeft: 15,
+    paddingHorizontal: 15,
   },
   right: {
     flex: 1,
