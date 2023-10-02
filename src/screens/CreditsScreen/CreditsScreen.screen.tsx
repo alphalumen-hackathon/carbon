@@ -3,29 +3,9 @@ import { SafeAreaView, ScrollView, Text, View } from "react-native";
 import { styles } from "./CreditsScreen.style";
 import CarbonCreditActivity from "../../components/CarbonCreditActivity/CarbonCreditActivity.component";
 import CarbonActivities from "../../states/CarbonActivities.state";
-import { useEffect } from 'react';
 
 const CreditsScreen = () => {
   const activities = CarbonActivities((state) => state.activities);
-  const create = CarbonActivities((state) => state.create);
-
-  useEffect(() => {
-    create("foo", 15, new Date());
-    create("bar", 10, new Date());
-    create("bar", 10, new Date());
-    create("bar", 10, new Date());
-    create("bar", 10, new Date());
-    create("bar", 1, new Date());
-    create("bar", 10, new Date());
-    create("bar", 10, new Date());
-    create("bar", 10, new Date());
-    create("bar", 10, new Date());
-    create("bar", 10, new Date());
-    create("bar", 10, new Date());
-    create("bar", 10, new Date());
-    create("bar", 10, new Date());
-    create("bar", 10, new Date());
-  }, []);
 
   // Calculating total carbon credits by adding the credits of each activity
   // Credits can't be negative, so it's locked to zero

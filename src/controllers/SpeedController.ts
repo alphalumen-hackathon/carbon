@@ -3,10 +3,16 @@ import * as TaskManager from "expo-task-manager";
 
 import CarbonActivities from "../states/CarbonActivities.state";
 
-const SPEED_LIMIT_IN_METERS_PER_SECOND = 25 / 3.6; // 25 km/h
+const SPEED_LIMIT_IN_METERS_PER_SECOND = 50 / 3.6; // 50 km/h
 const VEHICLE_USAGE_PENALTY = -20;
 
-export async function ListenForSpeedChange() {
+type LocationData = { locations: { coords: { speed: number } }[] };
+
+const isLocationEvent = (data: unknown): data is LocationData => {
+  return (data as LocationData)?.locations?.length > 0;
+};
+
+export async function listenForSpeedChange() {
   // Handling location permissions
   if (!(await Location.getBackgroundPermissionsAsync()).granted) {
     await Location.requestBackgroundPermissionsAsync();
@@ -16,14 +22,13 @@ export async function ListenForSpeedChange() {
   let isInVehicle = false;
 
   // Creating a task to run in the background
-  TaskManager.defineTask("LOCATION_TRACKER", async ({ data, error }: any) => {
+  TaskManager.defineTask("LOCATION_TRACKER", async ({ data, error }) => {
     if (error) {
       return console.warn(error);
     }
 
-    if (data) {
+    if (isLocationEvent(data)) {
       const speed = data.locations[0].coords.speed;
-      // createCarbonActivity("Vehicle usage", VEHICLE_USAGE_PENALTY)
 
       if (speed > SPEED_LIMIT_IN_METERS_PER_SECOND) {
         if (!isInVehicle) {

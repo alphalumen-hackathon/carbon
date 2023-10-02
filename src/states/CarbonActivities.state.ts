@@ -12,7 +12,9 @@ interface ICarbonActivities {
 }
 
 const CarbonActivities = create<ICarbonActivities>((set) => ({
-  activities: [],
+  activities: [
+    { description: "Monthly credits", credits: 200, date: new Date() },
+  ],
 
   create: (description: string, credits: number, date: Date) => {
     set((state: { activities: Activity[] }) => ({
