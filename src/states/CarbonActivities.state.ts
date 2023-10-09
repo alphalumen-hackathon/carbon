@@ -1,10 +1,10 @@
 import { create } from "zustand";
 
-interface Activity {
+type Activity = {
   description: string;
   credits: number;
   date: Date;
-}
+};
 
 interface ICarbonActivities {
   activities: Activity[];
