@@ -1,10 +1,10 @@
-import { DarkTheme, NavigationContainer } from "@react-navigation/native";
 import "react-native-gesture-handler";
+import { DarkTheme, NavigationContainer } from "@react-navigation/native";
 import { useEffect } from "react";
 import { Platform } from "react-native";
 
 import { listenForSpeedChange } from "./src/controllers/SpeedController";
-import CreditsScreen from "./src/screens/CreditsScreen/CreditsScreen.screen";
+import Credits from "./src/screens/Credits/Credits.screen";
 
 const App = () => {
   useEffect(() => {
@@ -15,7 +15,7 @@ const App = () => {
 
   return (
     <NavigationContainer theme={DarkTheme}>
-      <CreditsScreen />
+      <Credits />
     </NavigationContainer>
   );
 };

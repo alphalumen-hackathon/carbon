@@ -1,6 +1,6 @@
 import { SafeAreaView, ScrollView, Text, View } from "react-native";
 
-import { styles } from "./CreditsScreen.style";
+import { styles } from "./Credits.style";
 import CarbonCreditActivity from "../../components/CarbonCreditActivity/CarbonCreditActivity.component";
 import CarbonActivities from "../../states/CarbonActivities.state";
 

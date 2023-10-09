@@ -1,5 +1,10 @@
-import * as Location from "expo-location";
-import * as TaskManager from "expo-task-manager";
+import {
+  LocationAccuracy,
+  getBackgroundPermissionsAsync,
+  requestBackgroundPermissionsAsync,
+  startLocationUpdatesAsync,
+} from "expo-location";
+import { defineTask } from "expo-task-manager";
 
 import CarbonActivities from "../states/CarbonActivities.state";
 
@@ -14,15 +19,15 @@ const isLocationEvent = (data: unknown): data is LocationData => {
 
 export async function listenForSpeedChange() {
   // Handling location permissions
-  if (!(await Location.getBackgroundPermissionsAsync()).granted) {
-    await Location.requestBackgroundPermissionsAsync();
+  if (!(await getBackgroundPermissionsAsync()).granted) {
+    await requestBackgroundPermissionsAsync();
   }
 
   // Controls whether the user is or isn't in a vehicle
   let isInVehicle = false;
 
   // Creating a task to run in the background
-  TaskManager.defineTask("LOCATION_TRACKER", async ({ data, error }) => {
+  defineTask("LOCATION_TRACKER", async ({ data, error }) => {
     if (error) {
       return console.warn(error);
     }
@@ -53,8 +58,8 @@ export async function listenForSpeedChange() {
   });
 
   // Adding a updater for the task we've just created
-  await Location.startLocationUpdatesAsync("LOCATION_TRACKER", {
-    accuracy: Location.LocationAccuracy.BestForNavigation,
+  await startLocationUpdatesAsync("LOCATION_TRACKER", {
+    accuracy: LocationAccuracy.BestForNavigation,
     showsBackgroundLocationIndicator: true,
     foregroundService: {
       notificationTitle: "Carbon",
