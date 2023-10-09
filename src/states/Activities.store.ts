@@ -6,12 +6,12 @@ type Activity = {
   date: Date;
 };
 
-type ActivitiesStore = {
+type ActivitiesState = {
   activities: Activity[];
   create: (description: string, credits: number, date: Date) => void;
 }
 
-const activitiesStore = create<ActivitiesStore>((set) => ({
+const useActivitiesStore = create<ActivitiesState>((set) => ({
   activities: [
     { description: "Monthly credits", credits: 200, date: new Date() },
   ],
@@ -23,4 +23,4 @@ const activitiesStore = create<ActivitiesStore>((set) => ({
   },
 }));
 
-export default activitiesStore;
+export default useActivitiesStore;
