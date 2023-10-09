@@ -1,13 +1,13 @@
 import { Text, View } from "react-native";
 
-import ICarbonCreditActivityProps from "./CarbonCreditActivity.props";
+import CarbonCreditActivityProps from "./CarbonCreditActivity.props";
 import { styles } from "./CarbonCreditActivity.style";
 
 const CarbonCreditActivity = ({
   credits,
   description,
   date,
-}: ICarbonCreditActivityProps) => {
+}: CarbonCreditActivityProps) => {
   // Making the text red if it's negative credit
   const creditsTextColor = credits < 0 ? "#FF5E5E" : "#02D06D";
 
