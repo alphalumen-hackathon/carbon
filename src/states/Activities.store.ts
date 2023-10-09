@@ -9,7 +9,7 @@ type Activity = {
 type ActivitiesState = {
   activities: Activity[];
   create: (description: string, credits: number, date: Date) => void;
-}
+};
 
 const useActivitiesStore = create<ActivitiesState>((set) => ({
   activities: [
