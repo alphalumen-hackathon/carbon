@@ -6,7 +6,7 @@ import {
 } from "expo-location";
 import { defineTask } from "expo-task-manager";
 
-import CarbonActivities from "../states/Activities.store";
+import activitiesStore from "../states/Activities.store";
 
 const SPEED_LIMIT_IN_METERS_PER_SECOND = 50 / 3.6; // 50 km/h
 const VEHICLE_USAGE_PENALTY = -20;
@@ -40,11 +40,9 @@ export async function listenForSpeedChange() {
           // > First time the vehicle is detected
 
           // Creating an activity
-          CarbonActivities.getState().create(
-            "Vehicle usage",
-            VEHICLE_USAGE_PENALTY,
-            new Date(),
-          );
+          activitiesStore
+            .getState()
+            .create("Vehicle usage", VEHICLE_USAGE_PENALTY, new Date());
 
           return (isInVehicle = true);
         }
