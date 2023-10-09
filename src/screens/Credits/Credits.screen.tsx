@@ -2,10 +2,10 @@ import { SafeAreaView, ScrollView, Text, View } from "react-native";
 
 import { styles } from "./Credits.style";
 import CarbonCreditActivity from "../../components/CarbonCreditActivity/CarbonCreditActivity.component";
-import CarbonActivities from "../../states/CarbonActivities.state";
+import activitiesStore from "../../states/Activities.store";
 
 const CreditsScreen = () => {
-  const activities = CarbonActivities((state) => state.activities);
+  const activities = activitiesStore((state) => state.activities);
 
   // Calculating total carbon credits by adding the credits of each activity
   // Credits can't be negative, so it's locked to zero

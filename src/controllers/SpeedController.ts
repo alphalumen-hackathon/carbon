@@ -6,7 +6,7 @@ import {
 } from "expo-location";
 import { defineTask } from "expo-task-manager";
 
-import CarbonActivities from "../states/CarbonActivities.state";
+import CarbonActivities from "../states/Activities.store";
 
 const SPEED_LIMIT_IN_METERS_PER_SECOND = 50 / 3.6; // 50 km/h
 const VEHICLE_USAGE_PENALTY = -20;

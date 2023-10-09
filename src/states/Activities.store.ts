@@ -11,7 +11,7 @@ interface ICarbonActivities {
   create: (description: string, credits: number, date: Date) => void;
 }
 
-const CarbonActivities = create<ICarbonActivities>((set) => ({
+const activitiesStore = create<ICarbonActivities>((set) => ({
   activities: [
     { description: "Monthly credits", credits: 200, date: new Date() },
   ],
@@ -23,4 +23,4 @@ const CarbonActivities = create<ICarbonActivities>((set) => ({
   },
 }));
 
-export default CarbonActivities;
+export default activitiesStore;
