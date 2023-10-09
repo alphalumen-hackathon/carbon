@@ -6,12 +6,12 @@ type Activity = {
   date: Date;
 };
 
-interface ICarbonActivities {
+interface IActivitiesStore {
   activities: Activity[];
   create: (description: string, credits: number, date: Date) => void;
 }
 
-const activitiesStore = create<ICarbonActivities>((set) => ({
+const activitiesStore = create<IActivitiesStore>((set) => ({
   activities: [
     { description: "Monthly credits", credits: 200, date: new Date() },
   ],
