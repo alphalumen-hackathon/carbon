@@ -6,7 +6,7 @@ type Activity = {
   date: Date;
 };
 
-interface ActivitiesStore {
+type ActivitiesStore = {
   activities: Activity[];
   create: (description: string, credits: number, date: Date) => void;
 }
