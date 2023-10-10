@@ -11,12 +11,7 @@ export const styles = StyleSheet.create({
     padding: 20,
     alignItems: "center",
   },
-  topButton: {
-    width: 100,
-    height: 5,
-    backgroundColor: "#353535",
-    borderRadius: 10,
-  },
+
   inputBox: {
     marginTop: 20,
     marginBottom: 10,
