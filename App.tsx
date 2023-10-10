@@ -6,11 +6,13 @@ import { Platform } from "react-native";
 
 import { listenForSpeedChange } from "./src/controllers/SpeedController";
 import Credits from "./src/screens/Credits/Credits.screen";
+import HomeScreen from "./src/screens/Home/Home.screen";
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigation = () => (
   <Tab.Navigator>
+    <Tab.Screen name="Home" component={HomeScreen} />
     <Tab.Screen name="Credits" component={Credits} />
   </Tab.Navigator>
 );
