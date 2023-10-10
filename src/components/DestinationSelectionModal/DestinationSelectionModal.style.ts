@@ -1,20 +1,6 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  map: {
-    width: "100%",
-    height: "100%",
-  },
-  modal: {
-    display: "flex",
-    justifyContent: "flex-end",
-    margin: 0,
-  },
   modalView: {
     top: "55%",
     height: "45%",
