@@ -36,3 +36,4 @@ yarn-error.*
 
 # vscode
 .vscode
+key.json
