@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 10,
     height: 50,
-    width: "85%",
+    width: "90%",
     textAlign: "left",
     paddingLeft: 22,
     borderRadius: 10,
