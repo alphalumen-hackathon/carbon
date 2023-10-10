@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
   },
   inputBox: {
     marginTop: 20,
+    marginBottom: 10,
     height: 50,
     width: "85%",
     textAlign: "left",
