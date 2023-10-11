@@ -3,7 +3,7 @@ import { Modal, View } from "react-native";
 import MapView from "react-native-maps";
 
 import { styles } from "./Home.style";
-import DestinationSelectionModal from "../../components/DestinationSelectionModal/DestinationSelectionModal.component";
+import RouteSelectionModal from "../../components/RouteSelectionModal/RouteSelectionModal.component";
 
 const HomeScreen = () => {
   const [modalVisible, setModalVisible] = useState(true);
@@ -17,7 +17,7 @@ const HomeScreen = () => {
         style={styles.modal}
         transparent
       >
-        <DestinationSelectionModal />
+        <RouteSelectionModal />
       </Modal>
     </View>
   );
