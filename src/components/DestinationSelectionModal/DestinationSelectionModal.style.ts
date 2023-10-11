@@ -11,7 +11,6 @@ export const styles = StyleSheet.create({
     padding: 20,
     alignItems: "center",
   },
-
   inputBox: {
     marginTop: 20,
     marginBottom: 10,
