@@ -20,7 +20,7 @@ type RouteModalState = {
   type: RouteModalType;
   destinationCoords: LatLng;
   route: Route;
-  chooseVehicle: string;
+  choosenVehicle: string;
   choosenCredits: number;
   toggle: (value: boolean) => void;
   setType: (newType: RouteModalType) => void;
@@ -36,13 +36,13 @@ const useRouteModalStore = create<RouteModalState>((set) => ({
   type: RouteModalType.DestinationSelection,
   destinationCoords: { latitude: 0, longitude: 0 },
   route: { distance: 2, polyline: "" },
-  chooseVehicle: "",
+  choosenVehicle: "",
   choosenCredits: 0,
   toggle: (value: boolean) => set(() => ({ visible: value })),
   setType: (newType: RouteModalType) => set(() => ({ type: newType })),
   setRoute: (route: Route) => set(() => ({ route })),
   setChooseVehicle: (vehicle: string) =>
-    set(() => ({ chooseVehicle: vehicle })),
+    set(() => ({ choosenVehicle: vehicle })),
   setChoosenCredits: (credits: number) =>
     set(() => ({ choosenCredits: credits })),
   loadRoutes: async () => {

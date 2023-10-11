@@ -30,7 +30,7 @@ const RouteConfirmationModal = () => {
   const setRouteModalType = useRouteModalStore((state) => state.setType);
   const setModalVisible = useRouteModalStore((state) => state.toggle);
   const distance = useRouteModalStore((state) => state.route.distance);
-  const chooseVehicle = useRouteModalStore((state) => state.chooseVehicle);
+  const chooseVehicle = useRouteModalStore((state) => state.choosenVehicle);
   const choosenCredits = useRouteModalStore((state) => state.choosenCredits);
   const createActivity = useActivitiesStore((state) => state.create);
 
