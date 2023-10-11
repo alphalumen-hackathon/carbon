@@ -2,8 +2,8 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   modalView: {
-    top: "85%",
-    height: "15%",
+    top: "82%",
+    height: "18%",
     width: "100%",
     display: "flex",
     backgroundColor: "#181818",
@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
     borderTopStartRadius: 40,
     padding: 20,
     alignItems: "center",
+    gap: 20,
   },
   endButton: {
     width: "95%",
