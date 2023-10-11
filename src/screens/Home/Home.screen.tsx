@@ -5,13 +5,13 @@ import MapView, { Polyline } from "react-native-maps";
 
 import { styles } from "./Home.style";
 import DestinationSelectionModal from "../../components/DestinationSelectionModal/DestinationSelectionModal.component";
+import EndNavigationModal from "../../components/EndNavigationModal/EndNavigationModal.component";
 import RouteConfirmationModal from "../../components/RouteConfirmationModal/RouteConfirmationModal.component";
 import RouteSelectionModal from "../../components/RouteSelectionModal/RouteSelectionModal.component";
 import TopModalButton from "../../components/TopModalButton/TopModalButton.component";
 import useRouteModalStore, {
   RouteModalType,
 } from "../../states/RouteModal.store";
-import EndNavigationModal from "../../components/EndNavigationModal/EndNavigationModal.component";
 
 const ChooseModal = () => {
   const modalType = useRouteModalStore((state) => state.type);
