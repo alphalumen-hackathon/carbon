@@ -9,7 +9,7 @@ const DestinationSelectionModal = () => {
     <View style={styles.modalView}>
       <TopModalButton />
       <TextInput placeholder="Where are we going?" style={styles.inputBox} />
-      <FavoriteLocation name="Av. São João" distance={3.4} />
+      <FavoriteLocation name="Av. São João" distance={147} />
       <FavoriteLocation name="Rio de Janeiro" distance={264.5} />
     </View>
   );

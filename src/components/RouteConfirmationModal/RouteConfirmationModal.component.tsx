@@ -1,4 +1,4 @@
-import { Ionicons, FontAwesome5 } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import { View, Text, TouchableOpacity } from "react-native";
 import Svg, { Path } from "react-native-svg";
 
@@ -8,17 +8,7 @@ import useRouteModalStore, {
 } from "../../states/RouteModal.store";
 import ArrowLeftButton from "../ArrowLeftButton/ArrowLeftButton.component";
 import TopModalButton from "../TopModalButton/TopModalButton.component";
-
-const VehicleWidget = () => (
-  <View style={styles.vehicleContainer}>
-    <View style={styles.vehicleHeader}>
-      <Text style={styles.vehicleHeaderText}>Car</Text>
-    </View>
-    <View style={styles.vehicleMiddle}>
-      <FontAwesome5 name="car-side" size={60} color="white" />
-    </View>
-  </View>
-);
+import VehicleOption from "../VehicleOption/VehicleOption.component";
 
 const IconCarbonCredits = (color: string) => (
   <Svg width={30} height={40} viewBox="0 0 34 47" fill="none">
@@ -37,6 +27,11 @@ const IconCarbonCredits = (color: string) => (
 
 const RouteConfirmationModal = () => {
   const setRouteModalType = useRouteModalStore((state) => state.setType);
+  const distance = useRouteModalStore((state) => state.route.distance);
+  const chooseVehicle = useRouteModalStore((state) => state.chooseVehicle);
+  const choosenCredits = useRouteModalStore((state) => state.choosenCredits);
+
+  const creditColor = choosenCredits < 0 ? "#EF3838" : "#02D06D";
 
   return (
     <View style={styles.modalView}>
@@ -48,7 +43,12 @@ const RouteConfirmationModal = () => {
       </View>
 
       <View style={styles.infoRow}>
-        <VehicleWidget />
+        <VehicleOption
+          vehicleName={chooseVehicle}
+          credits={0}
+          iconName={chooseVehicle.toLowerCase()}
+          nocarbon
+        />
         <View style={styles.destinationInfo}>
           <View style={styles.locationInfoArea}>
             <View style={styles.locationEllipse}>
@@ -56,21 +56,23 @@ const RouteConfirmationModal = () => {
             </View>
             <View style={styles.locationInfoTextArea}>
               <Text style={styles.destinationText}>Av. São João</Text>
-              <Text style={styles.distanceText}>3.4 km</Text>
+              <Text style={styles.distanceText}>{distance / 1000} km</Text>
             </View>
           </View>
           <View style={styles.carbonCreditsInfo}>
             <View style={styles.carbonIconValue}>
-              {IconCarbonCredits("#EF3838")}
+              {IconCarbonCredits(creditColor)}
               <Text
-                style={{ color: "#EF3838", fontWeight: "bold", fontSize: 20 }}
+                style={{ color: creditColor, fontWeight: "bold", fontSize: 20 }}
               >
-                -70
+                {choosenCredits > 0 ? "+" : ""}
+
+                {choosenCredits}
               </Text>
             </View>
 
             <Text
-              style={{ color: "#EF3838", fontWeight: "bold", fontSize: 12 }}
+              style={{ color: creditColor, fontWeight: "bold", fontSize: 12 }}
             >
               carbon credits
             </Text>

@@ -24,28 +24,48 @@ const IconCarbonCredits = (color: string) => (
 );
 
 const VehicleOption = (props: VehicleOptionProps) => {
-  const { vehicleName, credits } = props;
+  const { vehicleName, credits, iconName, nocarbon } = props;
   const setRouteModalType = useRouteModalStore((state) => state.setType);
+  const setChooseVehicle = useRouteModalStore(
+    (state) => state.setChooseVehicle,
+  );
+  const setChoosenCredits = useRouteModalStore(
+    (state) => state.setChoosenCredits,
+  );
 
   const creditColor = credits < 0 ? "#EF3838" : "#02D06D";
+
+  const CarbonCredits = () => {
+    if (!nocarbon) {
+      return (
+        <>
+          {IconCarbonCredits(creditColor)}
+          <Text style={{ color: creditColor }}>
+            {credits > 0 ? "+" : ""}
+            {credits}
+          </Text>
+        </>
+      );
+    }
+  };
 
   return (
     <TouchableOpacity
       style={styles.container}
-      onPress={() => setRouteModalType(RouteModalType.VehicleConfirmation)}
+      onPress={() => {
+        setRouteModalType(RouteModalType.VehicleConfirmation);
+        setChooseVehicle(vehicleName);
+        setChoosenCredits(credits);
+      }}
     >
       <View style={styles.header}>
         <Text style={styles.headerText}>{vehicleName}</Text>
       </View>
       <View style={styles.middle}>
-        <FontAwesome5 name="car-side" size={60} color="white" />
+        <FontAwesome5 name={iconName} size={60} color="white" />
       </View>
       <View style={styles.footer}>
-        {IconCarbonCredits(creditColor)}
-        <Text style={{ color: creditColor }}>
-          {credits > 0 ? "+" : ""}
-          {credits}
-        </Text>
+        <CarbonCredits />
       </View>
     </TouchableOpacity>
   );
