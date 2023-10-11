@@ -5,8 +5,6 @@ export const requestRoute = async (
   destination: LatLng,
   travelMode: string,
 ): Promise<any> => {
-  let resp;
-
   const requestObject = {
     origin: {
       location: {

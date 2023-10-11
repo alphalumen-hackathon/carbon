@@ -9,15 +9,20 @@ export enum RouteModalType {
   VehicleConfirmation,
 }
 
+export type Route = {
+  distance: number;
+  polyline: string;
+};
+
 type RouteModalState = {
   visible: boolean;
   type: RouteModalType;
   destinationCoords: LatLng;
-  routePolyline: string | null;
+  route: Route;
   toggle: (value: boolean) => void;
   setType: (newType: RouteModalType) => void;
   setDestinationCoords: (coords: LatLng) => void;
-  setRoutePolyline: (polyline: string) => void;
+  setRoute: (route: Route) => void;
   loadRoutes: () => void;
 };
 
@@ -25,11 +30,10 @@ const useRouteModalStore = create<RouteModalState>((set) => ({
   visible: true,
   type: RouteModalType.DestinationSelection,
   destinationCoords: { latitude: 0, longitude: 0 },
-  routePolyline: "",
+  route: { distance: 2, polyline: "" },
   toggle: (value: boolean) => set(() => ({ visible: value })),
   setType: (newType: RouteModalType) => set(() => ({ type: newType })),
-  setRoutePolyline: (polyline: string) =>
-    set(() => ({ routePolyline: polyline })),
+  setRoute: (route: Route) => set(() => ({ route })),
   loadRoutes: async () => {
     const currentCoords: LatLng = {
       latitude: -22.2497711,
@@ -42,9 +46,10 @@ const useRouteModalStore = create<RouteModalState>((set) => ({
       "DRIVE",
     );
 
-    useRouteModalStore
-      .getState()
-      .setRoutePolyline(val.routes[0].polyline.encodedPolyline);
+    useRouteModalStore.getState().setRoute({
+      distance: 2,
+      polyline: val.routes[0].polyline.encodedPolyline,
+    });
   },
   setDestinationCoords: (coords: LatLng) =>
     set(() => ({ destinationCoords: coords })),

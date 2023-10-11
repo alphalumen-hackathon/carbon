@@ -1,6 +1,7 @@
 import { decode } from "@googlemaps/polyline-codec";
+import React from "react";
 import { Modal, View } from "react-native";
-import MapView, { LatLng, Polyline } from "react-native-maps";
+import MapView, { Polyline } from "react-native-maps";
 
 import { styles } from "./Home.style";
 import DestinationSelectionModal from "../../components/DestinationSelectionModal/DestinationSelectionModal.component";
@@ -26,21 +27,18 @@ const ChooseModal = () => {
 
 const HomeScreen = () => {
   const modalVisible = useRouteModalStore((state) => state.visible);
-  const polyline = useRouteModalStore((state) => state.routePolyline);
-  let coords: LatLng[] = [];
+  const route = useRouteModalStore((state) => state.route);
 
-  if (polyline != null) {
-    const from = decode(polyline);
-    coords = from.map((tuple) => ({
-      latitude: tuple[0],
-      longitude: tuple[1],
-    }));
-  }
+  const from = decode(route.polyline);
+  const coords = from.map((tuple) => ({
+    latitude: tuple[0],
+    longitude: tuple[1],
+  }));
 
   return (
     <View style={styles.container}>
       <MapView style={styles.map}>
-        <Polyline coordinates={coords} strokeWidth={3} />
+        <Polyline coordinates={coords} strokeWidth={4} />
       </MapView>
       <Modal
         animationType="slide"
