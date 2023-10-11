@@ -9,7 +9,6 @@ export const styles = StyleSheet.create({
   map: {
     width: "100%",
     height: "100%",
-    zIndex: 999,
   },
   modal: {
     display: "flex",
@@ -41,5 +40,19 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: "#353535",
     textDecorationColor: "#BEBEBE",
+  },
+  openModal: {
+    position: "absolute",
+    width: "100%",
+    height: 50,
+    backgroundColor: "#181818",
+    zIndex: 50,
+    alignSelf: "flex-end",
+    top: 575,
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
+    display: "flex",
+    alignItems: "center",
+    padding: 20,
   },
 });
