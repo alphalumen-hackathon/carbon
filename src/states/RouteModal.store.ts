@@ -7,6 +7,7 @@ export enum RouteModalType {
   DestinationSelection,
   VehicleSelection,
   VehicleConfirmation,
+  EndNavigation,
 }
 
 export type Route = {

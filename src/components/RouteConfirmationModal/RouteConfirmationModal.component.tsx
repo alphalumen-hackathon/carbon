@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import Svg, { Path } from "react-native-svg";
 
 import { styles } from "./RouteConfirmationModal.style";
+import useActivitiesStore from "../../states/Activities.store";
 import useRouteModalStore, {
   RouteModalType,
 } from "../../states/RouteModal.store";
@@ -31,6 +32,7 @@ const RouteConfirmationModal = () => {
   const distance = useRouteModalStore((state) => state.route.distance);
   const chooseVehicle = useRouteModalStore((state) => state.chooseVehicle);
   const choosenCredits = useRouteModalStore((state) => state.choosenCredits);
+  const createActivity = useActivitiesStore((state) => state.create);
 
   const creditColor = choosenCredits < 0 ? "#EF3838" : "#02D06D";
 
@@ -81,7 +83,13 @@ const RouteConfirmationModal = () => {
         </View>
       </View>
       <View style={styles.buttonArea}>
-        <TouchableOpacity style={styles.confirmationButton}>
+        <TouchableOpacity
+          style={styles.confirmationButton}
+          onPress={() => {
+            setRouteModalType(RouteModalType.EndNavigation);
+            createActivity(chooseVehicle, choosenCredits, new Date());
+          }}
+        >
           <Text style={styles.confirmText}>Confirm</Text>
         </TouchableOpacity>
         <TouchableOpacity

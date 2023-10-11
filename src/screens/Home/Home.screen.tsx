@@ -11,6 +11,7 @@ import TopModalButton from "../../components/TopModalButton/TopModalButton.compo
 import useRouteModalStore, {
   RouteModalType,
 } from "../../states/RouteModal.store";
+import EndNavigationModal from "../../components/EndNavigationModal/EndNavigationModal.component";
 
 const ChooseModal = () => {
   const modalType = useRouteModalStore((state) => state.type);
@@ -22,6 +23,8 @@ const ChooseModal = () => {
       return <RouteSelectionModal />;
     case RouteModalType.VehicleConfirmation:
       return <RouteConfirmationModal />;
+    case RouteModalType.EndNavigation:
+      return <EndNavigationModal />;
   }
 };
 
