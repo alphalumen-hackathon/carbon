@@ -3,6 +3,7 @@ import MapView from "react-native-maps";
 
 import { styles } from "./Home.style";
 import DestinationSelectionModal from "../../components/DestinationSelectionModal/DestinationSelectionModal.component";
+import RouteConfirmationModal from "../../components/RouteConfirmationModal/RouteConfirmationModal.component";
 import RouteSelectionModal from "../../components/RouteSelectionModal/RouteSelectionModal.component";
 import TopModalButton from "../../components/TopModalButton/TopModalButton.component";
 import useRouteModalStore, {
@@ -30,7 +31,8 @@ const HomeScreen = () => {
         style={styles.modal}
         transparent
       >
-        {ChooseModal()}
+        {/* {ChooseModal()} */}
+        <RouteConfirmationModal />
       </Modal>
       <View style={styles.openModal}>
         <TopModalButton />
