@@ -138,5 +138,5 @@ export const styles = StyleSheet.create({
     color: "#BEBEBE",
     fontWeight: "bold",
     fontSize: 15,
-  }
+  },
 });

@@ -40,7 +40,7 @@ const RouteConfirmationModal = () => {
         <IconArrowLeft />
       </View>
 
-     < View style={styles.infoRow}>
+      <View style={styles.infoRow}>
         <VehicleWidget />
         <View style={styles.destinationInfo}>
           <View style={styles.locationInfoArea}>
