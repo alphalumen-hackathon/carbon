@@ -27,6 +27,7 @@ const IconCarbonCredits = (color: string) => (
 
 const RouteConfirmationModal = () => {
   const setRouteModalType = useRouteModalStore((state) => state.setType);
+  const setModalVisible = useRouteModalStore((state) => state.toggle);
   const distance = useRouteModalStore((state) => state.route.distance);
   const chooseVehicle = useRouteModalStore((state) => state.chooseVehicle);
   const choosenCredits = useRouteModalStore((state) => state.choosenCredits);
@@ -83,7 +84,13 @@ const RouteConfirmationModal = () => {
         <TouchableOpacity style={styles.confirmationButton}>
           <Text style={styles.confirmText}>Confirm</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.cancelButton}>
+        <TouchableOpacity
+          style={styles.cancelButton}
+          onPress={() => {
+            setRouteModalType(RouteModalType.DestinationSelection);
+            setModalVisible(false);
+          }}
+        >
           <Text style={styles.cancelText}>Cancel</Text>
         </TouchableOpacity>
       </View>
