@@ -3,6 +3,7 @@ import { create } from "zustand";
 export enum RouteModalType {
   DestinationSelection,
   VehicleSelection,
+  VehicleConfirmation,
 }
 
 type RouteModalState = {

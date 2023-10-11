@@ -1,16 +1,23 @@
 import { View, Text, ScrollView } from "react-native";
 
-import { IconArrowLeft } from "./RouteSelectionModal.icons";
 import { styles } from "./RouteSelectionModal.style";
+import useRouteModalStore, {
+  RouteModalType,
+} from "../../states/RouteModal.store";
+import ArrowLeftButton from "../ArrowLeftButton/ArrowLeftButton.component";
 import TopModalButton from "../TopModalButton/TopModalButton.component";
 import VehicleOption from "../VehicleOption/VehicleOption.component";
 
 const RouteSelectionModal = () => {
+  const setRouteModalType = useRouteModalStore((state) => state.setType);
+
   return (
     <View style={styles.modalView}>
       <TopModalButton />
       <View style={styles.headerArea}>
-        <IconArrowLeft />
+        <ArrowLeftButton
+          onPress={() => setRouteModalType(RouteModalType.DestinationSelection)}
+        />
         <Text style={styles.headerText}>Choose a vehicle</Text>
       </View>
       <ScrollView

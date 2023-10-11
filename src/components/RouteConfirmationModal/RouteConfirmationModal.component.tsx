@@ -3,7 +3,10 @@ import { View, Text, TouchableOpacity } from "react-native";
 import Svg, { Path } from "react-native-svg";
 
 import { styles } from "./RouteConfirmationModal.style";
-import { IconArrowLeft } from "../RouteSelectionModal/RouteSelectionModal.icons";
+import useRouteModalStore, {
+  RouteModalType,
+} from "../../states/RouteModal.store";
+import ArrowLeftButton from "../ArrowLeftButton/ArrowLeftButton.component";
 import TopModalButton from "../TopModalButton/TopModalButton.component";
 
 const VehicleWidget = () => (
@@ -33,11 +36,15 @@ const IconCarbonCredits = (color: string) => (
 );
 
 const RouteConfirmationModal = () => {
+  const setRouteModalType = useRouteModalStore((state) => state.setType);
+
   return (
     <View style={styles.modalView}>
       <TopModalButton />
       <View style={styles.headerArea}>
-        <IconArrowLeft />
+        <ArrowLeftButton
+          onPress={() => setRouteModalType(RouteModalType.VehicleSelection)}
+        />
       </View>
 
       <View style={styles.infoRow}>

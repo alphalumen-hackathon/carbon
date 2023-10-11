@@ -1,14 +1,16 @@
 import { Ionicons } from "@expo/vector-icons";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 
 import FavoriteLocationProps from "./FavoriteLocation.props";
 import { styles } from "./FavoriteLocation.styles";
+import useRouteModalStore, { RouteModalType } from "../../states/RouteModal.store";
 
 const FavoriteLocation = (props: FavoriteLocationProps) => {
   const { name, distance } = props;
+  const setRouteModalType = useRouteModalStore((state) => state.setType);
 
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={() => setRouteModalType(RouteModalType.VehicleSelection)}>
       <View style={styles.iconTitleArea}>
         <View style={styles.locationEllipse}>
           <Ionicons name="location-outline" size={24} color="#02D06D" />
@@ -18,7 +20,7 @@ const FavoriteLocation = (props: FavoriteLocationProps) => {
       <View>
         <Text style={{ color: "#BEBEBE" }}>{distance} km</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

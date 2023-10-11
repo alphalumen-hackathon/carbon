@@ -12,10 +12,14 @@ import useRouteModalStore, {
 
 const ChooseModal = () => {
   const modalType = useRouteModalStore((state) => state.type);
-  if (modalType === RouteModalType.DestinationSelection) {
-    return <DestinationSelectionModal />;
-  } else {
-    return <RouteSelectionModal />;
+
+  switch (modalType) {
+    case RouteModalType.DestinationSelection:
+      return <DestinationSelectionModal />;
+    case RouteModalType.VehicleSelection:
+      return <RouteSelectionModal />;
+    case RouteModalType.VehicleConfirmation:
+      return <RouteConfirmationModal />;
   }
 };
 
@@ -31,8 +35,7 @@ const HomeScreen = () => {
         style={styles.modal}
         transparent
       >
-        {/* {ChooseModal()} */}
-        <RouteConfirmationModal />
+        {ChooseModal()}
       </Modal>
       <View style={styles.openModal}>
         <TopModalButton />

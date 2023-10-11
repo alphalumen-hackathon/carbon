@@ -1,4 +1,10 @@
+import { TouchableOpacity } from "react-native";
 import Svg, { Path } from "react-native-svg";
+
+import ArrowLeftButtonProps from "./ArrowLeftButton.props";
+import useRouteModalStore, {
+  RouteModalType,
+} from "../../states/RouteModal.store";
 
 export const IconArrowLeft = () => (
   <Svg width={33} height={33} viewBox="0 0 33 33" fill="none">
@@ -8,3 +14,17 @@ export const IconArrowLeft = () => (
     />
   </Svg>
 );
+
+const ArrowLeftButton = (props: ArrowLeftButtonProps) => {
+  const { onPress } = props;
+
+  const setRouteModalType = useRouteModalStore((state) => state.setType);
+
+  return (
+    <TouchableOpacity onPress={() => onPress()}>
+      <IconArrowLeft />
+    </TouchableOpacity>
+  );
+};
+
+export default ArrowLeftButton;

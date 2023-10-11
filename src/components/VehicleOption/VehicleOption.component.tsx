@@ -1,9 +1,12 @@
 import { FontAwesome5 } from "@expo/vector-icons";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { Path, Svg } from "react-native-svg";
 
 import VehicleOptionProps from "./VehicleOption.props";
 import { styles } from "./VehicleOption.style";
+import useRouteModalStore, {
+  RouteModalType,
+} from "../../states/RouteModal.store";
 
 const IconCarbonCredits = (color: string) => (
   <Svg width={25} height={40} viewBox="0 0 34 47" fill="none">
@@ -22,11 +25,15 @@ const IconCarbonCredits = (color: string) => (
 
 const VehicleOption = (props: VehicleOptionProps) => {
   const { vehicleName, credits } = props;
+  const setRouteModalType = useRouteModalStore((state) => state.setType);
 
   const creditColor = credits < 0 ? "#EF3838" : "#02D06D";
 
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => setRouteModalType(RouteModalType.VehicleConfirmation)}
+    >
       <View style={styles.header}>
         <Text style={styles.headerText}>{vehicleName}</Text>
       </View>
@@ -40,7 +47,7 @@ const VehicleOption = (props: VehicleOptionProps) => {
           {credits}
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
