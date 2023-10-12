@@ -30,7 +30,8 @@ const VehicleOption = (props: VehicleOptionProps) => {
   const setChooseVehicle = useRouteStore((state) => state.setChoosenVehicle);
   const setChoosenCredits = useRouteStore((state) => state.setChoosenCredits);
 
-  const creditColor = credits < 0 ? "#EF3838" : "#02D06D";
+  const isCreditNegative = credits < 0;
+  const creditColor = isCreditNegative ? "#EF3838" : "#02D06D";
 
   const CarbonCredits = () => {
     if (!nocarbon) {
@@ -38,7 +39,7 @@ const VehicleOption = (props: VehicleOptionProps) => {
         <>
           {IconCarbonCredits(creditColor)}
           <Text style={{ color: creditColor }}>
-            {credits > 0 ? "+" : ""}
+            {isCreditNegative ? "" : "+"}
             {credits}
           </Text>
         </>
