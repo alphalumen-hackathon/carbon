@@ -39,7 +39,7 @@ Features:
 - Typescript
 - NodeJS
 - Express
-- Firebase (Database)
+- Prisma
 
 
 <br/>
