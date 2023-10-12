@@ -4,6 +4,7 @@ import { Modal, View } from "react-native";
 import MapView, { Polyline } from "react-native-maps";
 
 import { styles } from "./Home.style";
+import AddressInputModal from "../../components/AddressInputModal/AddressInputModal.component";
 import DestinationSelectionModal from "../../components/DestinationSelectionModal/DestinationSelectionModal.component";
 import EndNavigationModal from "../../components/EndNavigationModal/EndNavigationModal.component";
 import RouteConfirmationModal from "../../components/RouteConfirmationModal/RouteConfirmationModal.component";
@@ -15,7 +16,18 @@ import useRouteModalStore, {
 } from "../../states/RouteModal.store";
 
 const ChooseModal = () => {
+  const setModalType = useRouteModalStore((state) => state.setModalType);
   const modalType = useRouteModalStore((state) => state.type);
+  const loadRoutes = useRouteStore((state) => state.loadRoutes);
+
+  const fromOnPress = () => {
+    setModalType(RouteModalType.ToAddress);
+  };
+
+  const toOnPress = async () => {
+    await loadRoutes();
+    setModalType(RouteModalType.VehicleSelection);
+  };
 
   switch (modalType) {
     case RouteModalType.DestinationSelection:
@@ -26,6 +38,24 @@ const ChooseModal = () => {
       return <RouteConfirmationModal />;
     case RouteModalType.EndNavigation:
       return <EndNavigationModal />;
+    case RouteModalType.FromAddress:
+      return (
+        <AddressInputModal
+          title="From"
+          onPress={() => {
+            fromOnPress();
+          }}
+        />
+      );
+    case RouteModalType.ToAddress:
+      return (
+        <AddressInputModal
+          title="To"
+          onPress={() => {
+            toOnPress();
+          }}
+        />
+      );
   }
 };
 
@@ -42,7 +72,7 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <MapView style={styles.map}>
-        <Polyline coordinates={coords} strokeWidth={4} />
+        <Polyline coordinates={coords} strokeWidth={5} strokeColor="white" />
       </MapView>
       <Modal
         animationType="slide"

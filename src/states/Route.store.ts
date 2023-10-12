@@ -11,6 +11,8 @@ export type Route = {
 type RouteState = {
   destinationCoords: LatLng;
   originCoords: LatLng;
+  originAddress: string;
+  destinationAddress: string;
   route: Route;
   chooseVehicle: string;
   choosenCredits: number;
@@ -18,12 +20,17 @@ type RouteState = {
   setRoute: (route: Route) => void;
   setChoosenVehicle: (vehicle: string) => void;
   setChoosenCredits: (credits: number) => void;
+  setOriginAddress: (addr: string) => void;
+  setDestinationAddress: (addr: string) => void;
+
   loadRoutes: () => void;
 };
 
 const useRouteStore = create<RouteState>((set) => ({
   destinationCoords: { latitude: 0, longitude: 0 },
   originCoords: { latitude: 0, longitude: 0 },
+  originAddress: "",
+  destinationAddress: "",
   route: { distance: 0, polyline: "" },
   chooseVehicle: "",
   choosenCredits: 0,
@@ -34,18 +41,41 @@ const useRouteStore = create<RouteState>((set) => ({
     set(() => ({ chooseVehicle: vehicle })),
   setChoosenCredits: (credits: number) =>
     set(() => ({ choosenCredits: credits })),
+  setOriginAddress: (addr: string) => set(() => ({ originAddress: addr })),
+  setDestinationAddress: (addr: string) =>
+    set(() => ({ destinationAddress: addr })),
   loadRoutes: async () => {
     // Remove this and get current location
-    const currentCoords: LatLng = {
-      latitude: -22.2497711,
-      longitude: -45.708548,
+    const origin = useRouteStore.getState().originAddress.replace(/ /g, "+");
+    const originGeoResponse = await fetch(
+      `https://maps.googleapis.com/maps/api/geocode/json?address=${origin}&key=AIzaSyCirXsoS-iH2CgbrfVPvnJB65cNHWmRhf0`,
+    );
+    const originData = await (await fetch(originGeoResponse.url)).json();
+    const originCoordsResponse = originData.results[0].geometry.location;
+
+    const originCoords: LatLng = {
+      latitude: originCoordsResponse.lat,
+      longitude: originCoordsResponse.lng,
     };
 
-    const val = await requestRoute(
-      currentCoords,
-      useRouteStore.getState().destinationCoords,
-      "DRIVE",
+    const destination = useRouteStore
+      .getState()
+      .destinationAddress.replace(/ /g, "+");
+    const destinationGeoResponse = await fetch(
+      `https://maps.googleapis.com/maps/api/geocode/json?address=${destination}&key=AIzaSyCirXsoS-iH2CgbrfVPvnJB65cNHWmRhf0`,
     );
+    const destinationData = await (
+      await fetch(destinationGeoResponse.url)
+    ).json();
+    const destinationCoordsResponse =
+      destinationData.results[0].geometry.location;
+
+    const destinationCoords: LatLng = {
+      latitude: destinationCoordsResponse.lat,
+      longitude: destinationCoordsResponse.lng,
+    };
+
+    const val = await requestRoute(originCoords, destinationCoords, "DRIVE");
 
     useRouteStore.getState().setRoute({
       distance: val.routes[0].distanceMeters,

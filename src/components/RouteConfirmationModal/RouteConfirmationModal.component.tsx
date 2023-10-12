@@ -1,4 +1,3 @@
-import { Ionicons } from "@expo/vector-icons";
 import { View, Text, TouchableOpacity } from "react-native";
 import Svg, { Path } from "react-native-svg";
 
@@ -34,6 +33,7 @@ const RouteConfirmationModal = () => {
   const chooseVehicle = useRouteStore((state) => state.chooseVehicle);
   const choosenCredits = useRouteStore((state) => state.choosenCredits);
   const createActivity = useActivitiesStore((state) => state.create);
+  const destinationAddress = useRouteStore((state) => state.destinationAddress);
 
   const creditColor = choosenCredits < 0 ? "#EF3838" : "#02D06D";
 
@@ -55,11 +55,11 @@ const RouteConfirmationModal = () => {
         />
         <View style={styles.destinationInfo}>
           <View style={styles.locationInfoArea}>
-            <View style={styles.locationEllipse}>
+            {/* <View style={styles.locationEllipse}>
               <Ionicons name="location-outline" size={24} color="#02D06D" />
-            </View>
+            </View> */}
             <View style={styles.locationInfoTextArea}>
-              <Text style={styles.destinationText}>Av. São João</Text>
+              <Text style={styles.destinationText}>{destinationAddress}</Text>
               <Text style={styles.distanceText}>{routeDistance / 1000} km</Text>
             </View>
           </View>
