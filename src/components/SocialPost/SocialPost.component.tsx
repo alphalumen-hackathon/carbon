@@ -21,7 +21,7 @@ const IconCarbonCredits = (color: string) => (
 );
 
 const SocialPost = (props: SocialPostProps) => {
-  const { following, credits } = props;
+  const { following, credits, type } = props;
 
   const textColor = credits < 0 ? "#EF3838" : "#02D06D";
 
@@ -34,7 +34,7 @@ const SocialPost = (props: SocialPostProps) => {
         <View style={styles.bottomInfoArea}>
           {IconCarbonCredits(textColor)}
           <Text style={{ color: textColor, fontWeight: "bold", fontSize: 17 }}>
-            {credits} • Car Ride
+            {credits} • {type}
           </Text>
         </View>
       </View>

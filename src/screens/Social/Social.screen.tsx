@@ -16,9 +16,13 @@ const SocialScreen = () => {
             <Text style={styles.topAreaText}>Following</Text>
           </View>
           <ScrollView contentContainerStyle={styles.scrollContainerView}>
-            <SocialPost following credits={-750} />
-            <SocialPost following={false} credits={268} />
-            <SocialPost following={false} credits={-859} />
+            <SocialPost following credits={-750} type="Car ride" />
+            <SocialPost following={false} credits={268} type="Walk" />
+            <SocialPost
+              following={false}
+              credits={-859}
+              type="Motorcycle ride"
+            />
           </ScrollView>
         </View>
         <View style={styles.scrollContainer}>
@@ -29,10 +33,10 @@ const SocialScreen = () => {
             contentContainerStyle={styles.scrollContainerView}
             scrollIndicatorInsets={{}}
           >
-            <SocialPost following credits={157} />
-            <SocialPost following={false} credits={-859} />
-            <SocialPost following credits={-750} />
-            <SocialPost following={false} credits={268} />
+            <SocialPost following credits={157} type="Bicycle ride" />
+            <SocialPost following={false} credits={-859} type="Car ride" />
+            <SocialPost following credits={-750} type="Car ride" />
+            <SocialPost following={false} credits={268} type="Bicycle ride" />
           </ScrollView>
         </View>
       </View>

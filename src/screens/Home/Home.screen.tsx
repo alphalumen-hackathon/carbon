@@ -1,11 +1,6 @@
 import { decode } from "@googlemaps/polyline-codec";
 import React from "react";
-import {
-  Modal,
-  TouchableWithoutFeedback,
-  View,
-  TouchableOpacity,
-} from "react-native";
+import { Modal, View } from "react-native";
 import MapView, { Polyline } from "react-native-maps";
 
 import { styles } from "./Home.style";
@@ -67,7 +62,6 @@ const ChooseModal = () => {
 const HomeScreen = () => {
   const modalVisible = useRouteModalStore((state) => state.visible);
   const route = useRouteStore((state) => state.route);
-  const setModalVisible = useRouteModalStore((state) => state.setVisibile);
 
   const from = decode(route.polyline);
   const coords = from.map((tuple) => ({
@@ -87,12 +81,7 @@ const HomeScreen = () => {
         style={styles.modal}
         transparent
       >
-        <TouchableOpacity
-          style={{ width: "100%", height: "100%" }}
-          onPress={() => setModalVisible(false)}
-        >
-          <TouchableWithoutFeedback>{ChooseModal()}</TouchableWithoutFeedback>
-        </TouchableOpacity>
+        {ChooseModal()}
       </Modal>
       <View style={styles.openModal}>
         <TopModalButton />
