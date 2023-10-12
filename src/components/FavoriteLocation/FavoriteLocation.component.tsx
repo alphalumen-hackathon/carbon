@@ -17,9 +17,9 @@ const FavoriteLocation = (props: FavoriteLocationProps) => {
   const loadRoutes = useRouteStore((state) => state.loadRoutes);
 
   const calculateRoutes = async () => {
-    setDestinationCoords({ latitude: -22.2572724, longitude: -45.698935 });
-    await loadRoutes();
-    setRouteModalType(RouteModalType.VehicleSelection);
+    // setDestinationCoords({ latitude: -22.2572724, longitude: -45.698935 });
+    // await loadRoutes();
+    // setRouteModalType(RouteModalType.VehicleSelection);
   };
 
   return (

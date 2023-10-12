@@ -72,7 +72,7 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <MapView style={styles.map}>
-        <Polyline coordinates={coords} strokeWidth={5} strokeColor="white" />
+        <Polyline coordinates={coords} strokeWidth={5} strokeColor="black" />
       </MapView>
       <Modal
         animationType="slide"

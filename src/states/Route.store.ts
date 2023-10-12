@@ -81,7 +81,10 @@ const useRouteStore = create<RouteState>((set) => ({
       distance: val.routes[0].distanceMeters,
       polyline: val.routes[0].polyline.encodedPolyline,
     });
+
   },
+
+
 }));
 
 export default useRouteStore;
