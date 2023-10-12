@@ -40,3 +40,22 @@ Features:
 - NodeJS
 - Express
 - Firebase (Database)
+
+
+<br/>
+<br/>
+
+
+
+<h2>Team Alpha Lumen</h2>
+<div style="width: 100%; display:flex; gap: 15; ">
+  <img src="assets/TeamLogo.svg" style="width: 50%; margin-right: 50"/>
+  <div style="display: flex; flex-direction: column; justify-content: space-evenly">
+    <li style="font-weight: bold; font-size: 18">Gabriel Faria</li>
+    <li style="font-weight: bold; font-size: 18">Gustavo Carvalho</li>
+    <li style="font-weight: bold; font-size: 18">Tiago Trindade</li>
+    <li style="font-weight: bold; font-size: 18">Pedro Martineli</li>
+  </div>
+
+</div>
+
