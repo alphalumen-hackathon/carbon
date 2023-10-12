@@ -50,6 +50,7 @@ const VehicleOption = (props: VehicleOptionProps) => {
     <TouchableOpacity
       style={styles.container}
       onPress={() => {
+        if (nocarbon) return;
         setRouteModalType(RouteModalType.VehicleConfirmation);
         setChooseVehicle(vehicleName);
         setChoosenCredits(credits);
