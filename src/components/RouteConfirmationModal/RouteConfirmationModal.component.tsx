@@ -30,7 +30,7 @@ const IconCarbonCredits = (color: string) => (
 const RouteConfirmationModal = () => {
   const setRouteModalType = useRouteModalStore((state) => state.setModalType);
   const setModalVisible = useRouteModalStore((state) => state.setVisibile);
-  const distance = useRouteStore((state) => state.route.distance);
+  const routeDistance = useRouteStore((state) => state.route.distance);
   const chooseVehicle = useRouteStore((state) => state.chooseVehicle);
   const choosenCredits = useRouteStore((state) => state.choosenCredits);
   const createActivity = useActivitiesStore((state) => state.create);
@@ -60,7 +60,7 @@ const RouteConfirmationModal = () => {
             </View>
             <View style={styles.locationInfoTextArea}>
               <Text style={styles.destinationText}>Av. São João</Text>
-              <Text style={styles.distanceText}>{distance / 1000} km</Text>
+              <Text style={styles.distanceText}>{routeDistance / 1000} km</Text>
             </View>
           </View>
           <View style={styles.carbonCreditsInfo}>
