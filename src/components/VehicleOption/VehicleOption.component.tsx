@@ -4,6 +4,7 @@ import { Path, Svg } from "react-native-svg";
 
 import VehicleOptionProps from "./VehicleOption.props";
 import { styles } from "./VehicleOption.style";
+import useRouteStore from "../../states/Route.store";
 import useRouteModalStore, {
   RouteModalType,
 } from "../../states/RouteModal.store";
@@ -26,12 +27,8 @@ const IconCarbonCredits = (color: string) => (
 const VehicleOption = (props: VehicleOptionProps) => {
   const { vehicleName, credits, iconName, nocarbon } = props;
   const setRouteModalType = useRouteModalStore((state) => state.setType);
-  const setChooseVehicle = useRouteModalStore(
-    (state) => state.setChooseVehicle,
-  );
-  const setChoosenCredits = useRouteModalStore(
-    (state) => state.setChoosenCredits,
-  );
+  const setChooseVehicle = useRouteStore((state) => state.setChoosenVehicle);
+  const setChoosenCredits = useRouteStore((state) => state.setChoosenCredits);
 
   const creditColor = credits < 0 ? "#EF3838" : "#02D06D";
 

@@ -4,6 +4,7 @@ import Svg, { Path } from "react-native-svg";
 
 import { styles } from "./RouteConfirmationModal.style";
 import useActivitiesStore from "../../states/Activities.store";
+import useRouteStore from "../../states/Route.store";
 import useRouteModalStore, {
   RouteModalType,
 } from "../../states/RouteModal.store";
@@ -29,9 +30,9 @@ const IconCarbonCredits = (color: string) => (
 const RouteConfirmationModal = () => {
   const setRouteModalType = useRouteModalStore((state) => state.setType);
   const setModalVisible = useRouteModalStore((state) => state.toggle);
-  const distance = useRouteModalStore((state) => state.route.distance);
-  const chooseVehicle = useRouteModalStore((state) => state.choosenVehicle);
-  const choosenCredits = useRouteModalStore((state) => state.choosenCredits);
+  const distance = useRouteStore((state) => state.route.distance);
+  const chooseVehicle = useRouteStore((state) => state.chooseVehicle);
+  const choosenCredits = useRouteStore((state) => state.choosenCredits);
   const createActivity = useActivitiesStore((state) => state.create);
 
   const creditColor = choosenCredits < 0 ? "#EF3838" : "#02D06D";

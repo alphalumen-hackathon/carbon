@@ -6,14 +6,15 @@ import { styles } from "./FavoriteLocation.styles";
 import useRouteModalStore, {
   RouteModalType,
 } from "../../states/RouteModal.store";
+import useRouteStore from "../../states/Route.store";
 
 const FavoriteLocation = (props: FavoriteLocationProps) => {
   const { name, distance } = props;
   const setRouteModalType = useRouteModalStore((state) => state.setType);
-  const setDestinationCoords = useRouteModalStore(
+  const setDestinationCoords = useRouteStore(
     (state) => state.setDestinationCoords,
   );
-  const loadRoutes = useRouteModalStore((state) => state.loadRoutes);
+  const loadRoutes = useRouteStore((state) => state.loadRoutes);
 
   const calculateRoutes = async () => {
     setDestinationCoords({ latitude: -22.2572724, longitude: -45.698935 });

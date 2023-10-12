@@ -9,6 +9,7 @@ import EndNavigationModal from "../../components/EndNavigationModal/EndNavigatio
 import RouteConfirmationModal from "../../components/RouteConfirmationModal/RouteConfirmationModal.component";
 import RouteSelectionModal from "../../components/RouteSelectionModal/RouteSelectionModal.component";
 import TopModalButton from "../../components/TopModalButton/TopModalButton.component";
+import useRouteStore from "../../states/Route.store";
 import useRouteModalStore, {
   RouteModalType,
 } from "../../states/RouteModal.store";
@@ -30,7 +31,7 @@ const ChooseModal = () => {
 
 const HomeScreen = () => {
   const modalVisible = useRouteModalStore((state) => state.visible);
-  const route = useRouteModalStore((state) => state.route);
+  const route = useRouteStore((state) => state.route);
 
   const from = decode(route.polyline);
   const coords = from.map((tuple) => ({

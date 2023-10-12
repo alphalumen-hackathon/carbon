@@ -1,6 +1,7 @@
 import { View, Text, ScrollView } from "react-native";
 
 import { styles } from "./RouteSelectionModal.style";
+import useRouteStore from "../../states/Route.store";
 import useRouteModalStore, {
   RouteModalType,
 } from "../../states/RouteModal.store";
@@ -16,7 +17,7 @@ import VehicleOption from "../VehicleOption/VehicleOption.component";
 
 const RouteSelectionModal = () => {
   const setRouteModalType = useRouteModalStore((state) => state.setType);
-  const routeDistance = useRouteModalStore((state) => state.route.distance);
+  const routeDistance = useRouteStore((state) => state.route.distance);
 
   return (
     <View style={styles.modalView}>
