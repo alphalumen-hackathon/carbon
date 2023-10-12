@@ -25,7 +25,10 @@ const SocialScreen = () => {
           <View style={styles.topAreaContainer}>
             <Text style={styles.topAreaText}>Worldwide</Text>
           </View>
-          <ScrollView contentContainerStyle={styles.scrollContainerView}>
+          <ScrollView
+            contentContainerStyle={styles.scrollContainerView}
+            scrollIndicatorInsets={{}}
+          >
             <SocialPost following credits={157} />
             <SocialPost following={false} credits={-859} />
             <SocialPost following credits={-750} />
