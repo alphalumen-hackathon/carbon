@@ -61,7 +61,9 @@ const RouteConfirmationModal = () => {
             </View> */}
             <View style={styles.locationInfoTextArea}>
               <Text style={styles.destinationText}>{destinationAddress}</Text>
-              <Text style={styles.distanceText}>{routeDistance / 1000} km</Text>
+              <Text style={styles.distanceText}>
+                {Math.round((routeDistance / 1000) * 10) / 10} km
+              </Text>
             </View>
           </View>
           <View style={styles.carbonCreditsInfo}>
