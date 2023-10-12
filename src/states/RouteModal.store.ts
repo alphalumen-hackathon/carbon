@@ -10,14 +10,14 @@ export enum RouteModalType {
 type RouteModalState = {
   visible: boolean;
   type: RouteModalType;
-  toggle: (value: boolean) => void;
+  setVisibile: (value: boolean) => void;
   setType: (newType: RouteModalType) => void;
 };
 
 const useRouteModalStore = create<RouteModalState>((set) => ({
   visible: true,
   type: RouteModalType.DestinationSelection,
-  toggle: (value: boolean) => set(() => ({ visible: value })),
+  setVisibile: (value: boolean) => set(() => ({ visible: value })),
   setType: (newType: RouteModalType) => set(() => ({ type: newType })),
 }));
 

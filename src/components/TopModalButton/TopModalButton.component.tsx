@@ -5,7 +5,7 @@ import useRouteModalStore from "../../states/RouteModal.store";
 
 const TopModalButton = () => {
   const modalVisible = useRouteModalStore((state) => state.visible);
-  const setModalVisible = useRouteModalStore((state) => state.toggle);
+  const setModalVisible = useRouteModalStore((state) => state.setVisibile);
 
   return (
     <TouchableOpacity
