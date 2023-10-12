@@ -34,6 +34,7 @@ const RouteConfirmationModal = () => {
   const choosenCredits = useRouteStore((state) => state.choosenCredits);
   const createActivity = useActivitiesStore((state) => state.create);
   const destinationAddress = useRouteStore((state) => state.destinationAddress);
+  const setRoute = useRouteStore((state) => state.setRoute);
 
   const creditColor = choosenCredits < 0 ? "#EF3838" : "#02D06D";
 
@@ -98,6 +99,7 @@ const RouteConfirmationModal = () => {
           onPress={() => {
             setRouteModalType(RouteModalType.DestinationSelection);
             setModalVisible(false);
+            setRoute({ distance: 0, polyline: "" });
           }}
         >
           <Text style={styles.cancelText}>Cancel</Text>
