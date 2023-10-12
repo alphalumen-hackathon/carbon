@@ -26,7 +26,7 @@ const IconCarbonCredits = (color: string) => (
 
 const VehicleOption = (props: VehicleOptionProps) => {
   const { vehicleName, credits, iconName, nocarbon } = props;
-  const setRouteModalType = useRouteModalStore((state) => state.setType);
+  const setRouteModalType = useRouteModalStore((state) => state.setModalType);
   const setChooseVehicle = useRouteStore((state) => state.setChoosenVehicle);
   const setChoosenCredits = useRouteStore((state) => state.setChoosenCredits);
 

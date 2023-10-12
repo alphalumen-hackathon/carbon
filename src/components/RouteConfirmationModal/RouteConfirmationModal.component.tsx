@@ -28,7 +28,7 @@ const IconCarbonCredits = (color: string) => (
 );
 
 const RouteConfirmationModal = () => {
-  const setRouteModalType = useRouteModalStore((state) => state.setType);
+  const setRouteModalType = useRouteModalStore((state) => state.setModalType);
   const setModalVisible = useRouteModalStore((state) => state.setVisibile);
   const distance = useRouteStore((state) => state.route.distance);
   const chooseVehicle = useRouteStore((state) => state.chooseVehicle);

@@ -3,14 +3,14 @@ import { View, Text, TouchableOpacity } from "react-native";
 
 import FavoriteLocationProps from "./FavoriteLocation.props";
 import { styles } from "./FavoriteLocation.styles";
+import useRouteStore from "../../states/Route.store";
 import useRouteModalStore, {
   RouteModalType,
 } from "../../states/RouteModal.store";
-import useRouteStore from "../../states/Route.store";
 
 const FavoriteLocation = (props: FavoriteLocationProps) => {
   const { name, distance } = props;
-  const setRouteModalType = useRouteModalStore((state) => state.setType);
+  const setRouteModalType = useRouteModalStore((state) => state.setModalType);
   const setDestinationCoords = useRouteStore(
     (state) => state.setDestinationCoords,
   );

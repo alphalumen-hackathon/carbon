@@ -16,7 +16,7 @@ import TopModalButton from "../TopModalButton/TopModalButton.component";
 import VehicleOption from "../VehicleOption/VehicleOption.component";
 
 const RouteSelectionModal = () => {
-  const setRouteModalType = useRouteModalStore((state) => state.setType);
+  const setRouteModalType = useRouteModalStore((state) => state.setModalType);
   const routeDistance = useRouteStore((state) => state.route.distance);
 
   return (
