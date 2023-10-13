@@ -29,7 +29,7 @@ const App = () => {
 
   return (
     <NavigationContainer theme={DarkTheme}>
-      <Stack.Navigator>
+      <Stack.Navigator  screenOptions={{ headerShown: false }}>
         {isSigned ? (
           <Stack.Screen name="Tab" component={TabNavigation} />
         ) : (
