@@ -8,14 +8,11 @@ export const createLog = async (credits: number, type: string) => {
     endLat: 0,
   };
 
-  const response = await fetch(
-    "https://carbon-api-production.up.railway.app/credit/log",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
+  await fetch("https://carbon-api-production.up.railway.app/credit/log", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
     },
-  );
+    body: JSON.stringify(data),
+  });
 };
