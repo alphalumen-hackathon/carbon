@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
     color: "#BEBEBE",
   },
   confirmButton: {
-    flex: 0.9,
+    height: 70,
     backgroundColor: "#02D06D",
     width: "90%",
     borderRadius: 18,
