@@ -6,14 +6,9 @@ import useActivitiesStore from "../../states/Activities.store";
 
 const CreditsScreen = () => {
   const activities = useActivitiesStore((state) => state.activities);
+  const totalCredits = useActivitiesStore((state) => state.totalCredits);
 
-  // Calculating total carbon credits by adding the credits of each activity
-  // Credits can't be negative, so it's locked to zero
-  const carbonCredits = activities.reduce(
-    (accumulated, activity) => accumulated + activity.credits,
-    0,
-  );
-  const creditsTextColor = carbonCredits < 0 ? "#FF5E5E" : "#02D06D";
+  const creditsTextColor = totalCredits < 0 ? "#FF5E5E" : "#02D06D";
 
   return (
     <SafeAreaView style={styles.container}>
@@ -24,7 +19,7 @@ const CreditsScreen = () => {
           numberOfLines={1}
           style={[styles.carbonCreditsValue, { color: creditsTextColor }]}
         >
-          {carbonCredits}
+          {totalCredits}
         </Text>
       </View>
 
