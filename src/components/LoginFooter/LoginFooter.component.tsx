@@ -1,15 +1,17 @@
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
 
 import LoginFooterProps from "./LoginFooter.props";
 import { styles } from "./LoginFooter.style";
 
 const LoginFooter = (props: LoginFooterProps) => {
-  const { text, linkText } = props;
+  const { text, linkText, linkOnPress } = props;
 
   return (
     <View style={styles.bottomAreaContainer}>
       <Text style={styles.bottomText}>{text}</Text>
-      <Text style={styles.bottomTextGreen}>{linkText}</Text>
+      <Pressable onPress={() => linkOnPress()}>
+        <Text style={styles.bottomTextGreen}>{linkText}</Text>
+      </Pressable>
     </View>
   );
 };

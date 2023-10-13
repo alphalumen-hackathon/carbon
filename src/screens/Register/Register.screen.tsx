@@ -5,7 +5,7 @@ import LoginButton from "../../components/LoginButton/LoginButton.component";
 import LoginFooter from "../../components/LoginFooter/LoginFooter.component";
 import LoginHeader from "../../components/LoginHeader/LoginHeader.component";
 
-const RegisterScreen = () => {
+const RegisterScreen = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
       <View style={styles.topAreaContainer}>
@@ -26,7 +26,11 @@ const RegisterScreen = () => {
           </View>
         </View>
       </View>
-      <LoginFooter text="Already have an account?" linkText="Login" />
+      <LoginFooter
+        text="Already have an account?"
+        linkText="Login"
+        linkOnPress={() => navigation.navigate("Login")}
+      />
     </View>
   );
 };
