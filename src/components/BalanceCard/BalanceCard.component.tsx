@@ -2,9 +2,14 @@ import { Text, View } from "react-native";
 import { Path, Svg } from "react-native-svg";
 
 import { styles } from "./BalanceCard.styles";
+import useActivitiesStore from "../../states/Activities.store";
+import useUserStore from "../../states/User.store";
 import Currency from "../Currency/Currency.component";
 
 const BalanceCard = () => {
+  const username = useUserStore((state) => state.username);
+  const credits = useActivitiesStore((state) => state.totalCredits);
+
   return (
     <View style={styles.container}>
       <View style={styles.row}>
@@ -24,8 +29,8 @@ const BalanceCard = () => {
         </Svg>
       </View>
       <View style={styles.row}>
-        <Currency value={7200} size={25} />
-        <Text style={styles.thinText}>Username</Text>
+        <Currency value={credits} size={25} />
+        <Text style={styles.thinText}>{username}</Text>
       </View>
     </View>
   );

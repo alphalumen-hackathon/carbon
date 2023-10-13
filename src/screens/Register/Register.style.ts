@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     paddingTop: 25,
   },
   topAreaContainer: {
-    flex: 0.8,
+    flex: 1,
   },
 
   textInput: {

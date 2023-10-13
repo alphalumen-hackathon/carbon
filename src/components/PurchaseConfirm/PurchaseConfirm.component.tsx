@@ -3,6 +3,8 @@ import { View, Image, Text, TouchableOpacity, Modal } from "react-native";
 
 import PurchaseConfirmProps from "./PurchaseConfirm.props";
 import { styles } from "./PurchaseConfirm.style";
+import { createLog } from "../../http/requests";
+import useActivitiesStore from "../../states/Activities.store";
 import Currency from "../Currency/Currency.component";
 
 const StatementLine = ({ title, value }: { title: string; value: number }) => (
@@ -14,12 +16,21 @@ const StatementLine = ({ title, value }: { title: string; value: number }) => (
 
 const ConfirmModal = ({ item, onDismiss }: PurchaseConfirmProps) => {
   const [visible, setVisible] = useState(true);
-  const balance = 5000;
+  const balance = useActivitiesStore((state) => state.totalCredits);
   const canPurchase = balance >= item.price;
+  const createActivity = useActivitiesStore((state) => state.create);
 
   const close = () => {
     setVisible(false);
     onDismiss();
+  };
+
+  const buyItem = () => {
+    if (canPurchase) {
+      createLog(-item.price, `Bought ${item.name}`);
+      createActivity(`Bought ${item.name}`, -item.price, new Date());
+      close();
+    }
   };
 
   return (
@@ -52,7 +63,7 @@ const ConfirmModal = ({ item, onDismiss }: PurchaseConfirmProps) => {
               styles.confirmationButton,
               !canPurchase && { backgroundColor: "#964242" },
             ]}
-            disabled
+            onPress={() => buyItem()}
           >
             <Text style={styles.confirmText}>
               {balance >= item.price ? "Confirm" : "Not enough credits"}
