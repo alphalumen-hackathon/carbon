@@ -5,10 +5,9 @@ export const styles = StyleSheet.create({
     height: "100%",
     width: "100%",
     backgroundColor: "#181818",
-    paddingTop: 10,
+    paddingTop: 35,
     padding: 20,
     paddingBottom: 30,
-    marginTop: 25,
   },
   headerArea: {
     display: "flex",

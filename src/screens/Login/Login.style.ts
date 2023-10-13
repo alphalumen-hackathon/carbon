@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#1E1E1E",
     display: "flex",
-    marginTop: 25,
+    paddingTop: 25,
   },
   topAreaContainer: {
     flex: 0.8,
@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
   },
   subtitle: {
     color: "#BEBEBE",
-    fontSize: 16,
+    fontSize: 20,
   },
   textInput: {
     width: "90%",
@@ -89,5 +89,5 @@ export const styles = StyleSheet.create({
     color: "#02D06D",
     fontWeight: "bold",
     textDecorationLine: "underline",
-  }
+  },
 });
