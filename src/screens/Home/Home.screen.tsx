@@ -1,7 +1,7 @@
 import { decode } from "@googlemaps/polyline-codec";
 import React from "react";
 import { Modal, View } from "react-native";
-import MapView, { Polyline } from "react-native-maps";
+import MapView, { Marker, Polyline } from "react-native-maps";
 
 import { styles } from "./Home.style";
 import AddressInputModal from "../../components/AddressInputModal/AddressInputModal.component";
@@ -62,6 +62,8 @@ const ChooseModal = () => {
 const HomeScreen = () => {
   const modalVisible = useRouteModalStore((state) => state.visible);
   const route = useRouteStore((state) => state.route);
+  const originAddress = useRouteStore((state) => state.originAddress);
+  const destinationAddress = useRouteStore((state) => state.destinationAddress);
 
   const from = decode(route.polyline);
   const coords = from.map((tuple) => ({
@@ -73,6 +75,16 @@ const HomeScreen = () => {
     <View style={styles.container}>
       <MapView style={styles.map}>
         <Polyline coordinates={coords} strokeWidth={5} strokeColor="black" />
+        <Marker
+          coordinate={coords[0]}
+          title="Origin"
+          description={originAddress}
+        />
+        <Marker
+          coordinate={coords[coords.length - 1]}
+          title="Destination"
+          description={destinationAddress}
+        />
       </MapView>
 
       <Modal
