@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 
-import { styles } from "./LoginFooter.style";
 import LoginFooterProps from "./LoginFooter.props";
+import { styles } from "./LoginFooter.style";
 
 const LoginFooter = (props: LoginFooterProps) => {
   const { text, linkText } = props;

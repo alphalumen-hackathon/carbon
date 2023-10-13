@@ -1,7 +1,7 @@
 import { TouchableOpacity, Text } from "react-native";
 
-import { styles } from "./LoginButton.style";
 import LoginButtonProps from "./LoginButton.props";
+import { styles } from "./LoginButton.style";
 
 const LoginButton = (props: LoginButtonProps) => {
   const { text } = props;

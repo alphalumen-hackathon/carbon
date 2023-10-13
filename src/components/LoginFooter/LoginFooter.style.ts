@@ -1,7 +1,6 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-
   bottomText: {
     color: "#BEBEBE",
     fontSize: 19,
@@ -21,5 +20,4 @@ export const styles = StyleSheet.create({
     alignItems: "flex-end",
     padding: 15,
   },
-
 });
