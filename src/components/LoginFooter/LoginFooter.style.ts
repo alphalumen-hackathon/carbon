@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     textDecorationLine: "underline",
   },
   bottomAreaContainer: {
-    flex: 0.2,
+    flex: 0.05,
     display: "flex",
     flexDirection: "row",
     gap: 5,

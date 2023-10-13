@@ -5,9 +5,9 @@ import { styles } from "./Login.style";
 import LoginButton from "../../components/LoginButton/LoginButton.component";
 import LoginFooter from "../../components/LoginFooter/LoginFooter.component";
 import LoginHeader from "../../components/LoginHeader/LoginHeader.component";
+import { getLogs } from "../../http/requests";
 import useActivitiesStore from "../../states/Activities.store";
 import useUserStore from "../../states/User.store";
-import { getLogs } from "../../http/requests";
 
 const LoginScreen = ({ navigation }: any) => {
   const [usernameText, setUsernameText] = useState("");
