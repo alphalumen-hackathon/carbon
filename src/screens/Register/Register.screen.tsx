@@ -13,6 +13,7 @@ const RegisterScreen = ({ navigation }: any) => {
   const [passwordText, setPasswordText] = useState("");
   const [passwordConfirmationText, setPasswordConfirmationText] = useState("");
   const setSignedIn = useUserStore((state) => state.setSigned);
+  const setUsername = useUserStore((state) => state.setUsername);
 
   const register = async () => {
     if (
@@ -40,6 +41,7 @@ const RegisterScreen = ({ navigation }: any) => {
 
       if (response.status === 201) {
         setSignedIn(true);
+        setUsername(usernameText);
       }
     }
   };

@@ -24,12 +24,11 @@ const TabNavigation = () => (
 );
 
 const App = () => {
-  // const isSigned = useUserStore((state) => state.isSigned);
-  const isSigned = true;
+  const isSigned = useUserStore((state) => state.isSigned);
 
   return (
     <NavigationContainer theme={DarkTheme}>
-      <Stack.Navigator  screenOptions={{ headerShown: false }}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         {isSigned ? (
           <Stack.Screen name="Tab" component={TabNavigation} />
         ) : (

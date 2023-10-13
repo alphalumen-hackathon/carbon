@@ -14,6 +14,7 @@ const LoginScreen = ({ navigation }: any) => {
   const [usernameText, setUsernameText] = useState("");
   const [passwordText, setPasswordText] = useState("");
   const setSignedIn = useUserStore((state) => state.setSigned);
+  const setUsername = useUserStore((state) => state.setUsername);
   const createActivity = useActivitiesStore((state) => state.create);
 
   const login = async () => {
@@ -40,6 +41,7 @@ const LoginScreen = ({ navigation }: any) => {
           createActivity(log.type, log.amount, new Date());
         }
         setSignedIn(true);
+        setUsername(usernameText);
       }
     }
   };
