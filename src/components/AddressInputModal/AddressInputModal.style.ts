@@ -8,8 +8,6 @@ export const styles = StyleSheet.create({
     justifyContent: "space-around",
     width: "100%",
     backgroundColor: "#181818",
-    borderTopEndRadius: 40,
-    borderTopStartRadius: 40,
     padding: 30,
     alignItems: "center",
   },

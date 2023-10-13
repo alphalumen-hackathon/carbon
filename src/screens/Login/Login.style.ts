@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#1E1E1E",
     display: "flex",
+    marginTop: 25,
   },
   topAreaContainer: {
     flex: 0.8,

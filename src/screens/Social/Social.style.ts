@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     paddingTop: 10,
     padding: 20,
     paddingBottom: 30,
+    marginTop: 25,
   },
   headerArea: {
     display: "flex",

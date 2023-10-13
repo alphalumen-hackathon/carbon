@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     display: "flex",
     height: "100%",
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    marginTop: 25,
   },
   creditsArea: {
     display: "flex",
