@@ -1,15 +1,17 @@
 import "react-native-gesture-handler";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { DarkTheme, NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
 import Credits from "./src/screens/Credits/Credits.screen";
 import HomeScreen from "./src/screens/Home/Home.screen";
 import LoginScreen from "./src/screens/Login/Login.screen";
+import RegisterScreen from "./src/screens/Register/Register.screen";
 import ShopScreen from "./src/screens/Shop/Shop.screen";
 import SocialScreen from "./src/screens/Social/Social.screen";
-import RegisterScreen from "./src/screens/Register/Register.screen";
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const TabNavigation = () => (
   <Tab.Navigator screenOptions={{ headerShown: false }}>
@@ -17,15 +19,24 @@ const TabNavigation = () => (
     <Tab.Screen name="Credits" component={Credits} />
     <Tab.Screen name="Social" component={SocialScreen} />
     <Tab.Screen name="Shop" component={ShopScreen} />
-    <Tab.Screen name="Login" component={LoginScreen} />
-    <Tab.Screen name="Register" component={RegisterScreen} />
   </Tab.Navigator>
 );
 
 const App = () => {
+  const isSigned = false;
+
   return (
     <NavigationContainer theme={DarkTheme}>
-      {TabNavigation()}
+      <Stack.Navigator>
+        {isSigned ? (
+          <Stack.Screen name="Tab" component={TabNavigation} />
+        ) : (
+          <>
+            <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="Register" component={RegisterScreen} />
+          </>
+        )}
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
