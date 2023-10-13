@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { View, Text, TextInput } from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 import { styles } from "./Login.style";
 import LoginButton from "../../components/LoginButton/LoginButton.component";
@@ -44,7 +45,7 @@ const LoginScreen = ({ navigation }: any) => {
   };
 
   return (
-    <View style={styles.container}>
+    <KeyboardAwareScrollView style={styles.container}>
       <View style={styles.topAreaContainer}>
         <LoginHeader />
         <View style={styles.inputArea}>
@@ -71,7 +72,7 @@ const LoginScreen = ({ navigation }: any) => {
         linkText="Register"
         linkOnPress={() => navigation.navigate("Register")}
       />
-    </View>
+    </KeyboardAwareScrollView>
   );
 };
 
