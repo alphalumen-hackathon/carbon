@@ -18,6 +18,4 @@ export const createLog = async (credits: number, type: string) => {
       body: JSON.stringify(data),
     },
   );
-
-  console.log(JSON.stringify(response));
 };

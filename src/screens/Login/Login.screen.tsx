@@ -5,12 +5,14 @@ import { styles } from "./Login.style";
 import LoginButton from "../../components/LoginButton/LoginButton.component";
 import LoginFooter from "../../components/LoginFooter/LoginFooter.component";
 import LoginHeader from "../../components/LoginHeader/LoginHeader.component";
+import useActivitiesStore from "../../states/Activities.store";
 import useUserStore from "../../states/User.store";
 
 const LoginScreen = ({ navigation }: any) => {
   const [usernameText, setUsernameText] = useState("");
   const [passwordText, setPasswordText] = useState("");
   const setSignedIn = useUserStore((state) => state.setSigned);
+  const createActivity = useActivitiesStore((state) => state.create);
 
   const login = async () => {
     if (usernameText && passwordText) {
@@ -31,6 +33,15 @@ const LoginScreen = ({ navigation }: any) => {
       );
 
       if (response.status === 200) {
+        const resp = await fetch(
+          "https://carbon-api-production.up.railway.app/credit/list",
+          {
+            method: "GET",
+          },
+        );
+        for (const log of await resp.json()) {
+          createActivity(log.type, log.amount, new Date());
+        }
         setSignedIn(true);
       }
     }
