@@ -1,0 +1,16 @@
+import { TouchableOpacity, Text } from "react-native";
+
+import { styles } from "./LoginButton.style";
+import LoginButtonProps from "./LoginButton.props";
+
+const LoginButton = (props: LoginButtonProps) => {
+  const { text } = props;
+
+  return (
+    <TouchableOpacity style={styles.confirmButton}>
+      <Text style={styles.buttonText}>{text}</Text>
+    </TouchableOpacity>
+  );
+};
+
+export default LoginButton;
