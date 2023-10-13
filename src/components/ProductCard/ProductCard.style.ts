@@ -2,15 +2,15 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    width: 300,
-    height: 430,
+    height: "100%",
+    aspectRatio: 30 / 43,
     borderRadius: 20,
     justifyContent: "flex-end",
   },
   background: {
     backgroundColor: "#070707",
-    width: 300,
-    height: 400,
+    aspectRatio: 30 / 43,
+    height: "95%",
     borderRadius: 20,
     alignItems: "center",
   },

@@ -7,8 +7,27 @@ export const styles = StyleSheet.create({
   },
   margin: {
     margin: 20,
+    paddingTop: 20,
     flex: 1,
     justifyContent: "space-between",
+  },
+  header: {
+    width: "100%",
+    height: "12%",
+  },
+  balanceContainer: {
+    width: "100%",
+    height: "16%",
+  },
+  productsContainer: {
+    width: "100%",
+    height: "65%",
+    justifyContent: "space-between",
+  },
+  flatList: {
+    height: "95%",
+    width: "100%",
+    flexGrow: 0,
   },
   title: {
     color: "#02D06D",
@@ -21,9 +40,6 @@ export const styles = StyleSheet.create({
     width: "100%",
     fontSize: 18,
     fontWeight: "200",
-  },
-  productsContainer: {
-    height: "65%",
   },
   featuredProductsLabel: {
     color: "#02D06D",

@@ -43,6 +43,47 @@ const ShopScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.margin}>
+        <View style={styles.header}>
+          <Text style={styles.title}>Shop</Text>
+
+          <Text style={styles.subtitle}>
+            Exchange your carbon credits for products
+          </Text>
+        </View>
+
+        <View style={styles.balanceContainer}>
+          <BalanceCard />
+        </View>
+
+        <View style={styles.productsContainer}>
+          <Text style={styles.featuredProductsLabel}>Featured products</Text>
+
+          <FlatList
+            style={styles.flatList}
+            data={PRODUCTS}
+            renderItem={({ item }) => (
+              <ProductCard
+                item={item}
+                onPress={() => {
+                  setSelectedProduct(item);
+                }}
+              />
+            )}
+            keyExtractor={(item) => item.name}
+            horizontal
+            ItemSeparatorComponent={() => <View style={{ width: 40 }} />}
+          />
+        </View>
+
+        {selectedProduct && (
+          <ConfirmModal
+            item={selectedProduct}
+            onDismiss={() => setSelectedProduct(null)}
+          />
+        )}
+      </View>
+
+      {/* <View style={styles.margin}>
         <View>
           <Text style={styles.title}>Shop</Text>
           <Text style={styles.subtitle}>
@@ -80,7 +121,7 @@ const ShopScreen = () => {
           item={selectedProduct}
           onDismiss={() => setSelectedProduct(null)}
         />
-      )}
+      )} */}
     </View>
   );
 };
