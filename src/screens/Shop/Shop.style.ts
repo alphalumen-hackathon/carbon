@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
   },
   header: {
     width: "100%",
-    height: "12%",
+    height: "8%",
   },
   balanceContainer: {
     width: "100%",
@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
   title: {
     color: "#02D06D",
     width: "100%",
-    fontSize: 60,
+    fontSize: 45,
     fontWeight: "bold",
   },
   subtitle: {

@@ -82,46 +82,6 @@ const ShopScreen = () => {
           />
         )}
       </View>
-
-      {/* <View style={styles.margin}>
-        <View>
-          <Text style={styles.title}>Shop</Text>
-          <Text style={styles.subtitle}>
-            Exchange your carbon credits for products
-          </Text>
-        </View>
-
-        <BalanceCard />
-
-        <View style={styles.productsContainer}>
-          <Text style={styles.featuredProductsLabel}>Featured products</Text>
-
-          <FlatList
-            data={PRODUCTS}
-            renderItem={({ item }) => (
-              <ProductCard
-                item={item}
-                onPress={() => {
-                  setSelectedProduct(item);
-                }}
-              />
-            )}
-            keyExtractor={(item) => item.name}
-            horizontal
-            ItemSeparatorComponent={() => <View style={{ width: 40 }} />}
-            snapToInterval={340}
-            pagingEnabled
-            decelerationRate="fast"
-          />
-        </View>
-      </View>
-
-      {selectedProduct && (
-        <ConfirmModal
-          item={selectedProduct}
-          onDismiss={() => setSelectedProduct(null)}
-        />
-      )} */}
     </View>
   );
 };
