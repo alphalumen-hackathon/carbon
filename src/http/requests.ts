@@ -18,12 +18,29 @@ export const createLog = async (credits: number, type: string) => {
 };
 
 export const getLogs = async () => {
-  const resp = await fetch(
+  const response = await fetch(
     "https://carbon-api-production.up.railway.app/credit/list",
     {
       method: "GET",
     },
   );
 
-  return await resp.json();
+  return await response.json();
+};
+
+export const getFeed = async () => {
+  const response = await fetch(
+    "https://carbon-api-production.up.railway.app/feed",
+    {
+      method: "GET",
+    },
+  );
+
+  console.log(JSON.stringify(await response.json()));
+};
+
+export const follow = async (username: string) => {
+  await fetch(
+    `https://carbon-api-production.up.railway.app/follow/${username}`,
+  );
 };
