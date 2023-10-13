@@ -71,7 +71,7 @@ const ShopScreen = () => {
             )}
             keyExtractor={(item) => item.name}
             horizontal
-            ItemSeparatorComponent={() => <View style={{ width: 40 }} />}
+            ItemSeparatorComponent={() => <View style={{ width: 10 }} />}
           />
         </View>
 

@@ -12,7 +12,9 @@ const ProductCard = ({ item, onPress }: ProductCardProps) => {
           <Image style={styles.image} source={item.image} />
 
           <View style={styles.bottom}>
-            <Text style={styles.name}>{item.name}</Text>
+            <Text style={styles.name} adjustsFontSizeToFit numberOfLines={1}>
+              {item.name}
+            </Text>
             <Text style={styles.tapToExchange}>Tap to exchange</Text>
           </View>
 

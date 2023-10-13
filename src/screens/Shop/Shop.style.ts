@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
   },
   margin: {
     margin: 20,
+    marginBottom: 5,
     paddingTop: 20,
     flex: 1,
     justifyContent: "space-between",
@@ -22,12 +23,10 @@ export const styles = StyleSheet.create({
   productsContainer: {
     width: "100%",
     height: "65%",
-    justifyContent: "space-between",
   },
   flatList: {
-    height: "95%",
+    height: "100%",
     width: "100%",
-    flexGrow: 0,
   },
   title: {
     color: "#02D06D",

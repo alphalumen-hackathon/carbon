@@ -24,7 +24,8 @@ const TabNavigation = () => (
 );
 
 const App = () => {
-  const isSigned = useUserStore((state) => state.isSigned);
+  // const isSigned = useUserStore((state) => state.isSigned);
+  const isSigned = true;
 
   return (
     <NavigationContainer theme={DarkTheme}>

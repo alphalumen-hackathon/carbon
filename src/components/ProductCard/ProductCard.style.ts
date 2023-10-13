@@ -3,16 +3,16 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     height: "100%",
-    aspectRatio: 30 / 43,
     borderRadius: 20,
     justifyContent: "flex-end",
+    flex: 1,
   },
   background: {
     backgroundColor: "#070707",
-    aspectRatio: 30 / 43,
-    height: "95%",
+    aspectRatio: 0.95,
     borderRadius: 20,
     alignItems: "center",
+    margin: 10,
   },
   name: {
     color: "white",
@@ -24,15 +24,21 @@ const styles = StyleSheet.create({
     bottom: 20,
     width: "100%",
     alignItems: "center",
+    paddingLeft: 5,
+    paddingRight: 5,
+    zIndex: 10,
   },
   tapToExchange: {
     color: "#353535",
   },
   image: {
-    width: 400,
-    height: 400,
-    position: "absolute",
-    top: -30,
+    flex: 1,
+    width: "100%",
+    height: undefined,
+    aspectRatio: 1.1,
+    zIndex: 5,
+    overflow: "visible",
+    bottom: 10,
   },
   touchable: {
     width: "100%",
@@ -49,6 +55,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
+    zIndex: 10,
   },
 });
 
