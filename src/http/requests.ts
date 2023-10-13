@@ -16,3 +16,14 @@ export const createLog = async (credits: number, type: string) => {
     body: JSON.stringify(data),
   });
 };
+
+export const getLogs = async () => {
+  const resp = await fetch(
+    "https://carbon-api-production.up.railway.app/credit/list",
+    {
+      method: "GET",
+    },
+  );
+
+  return await resp.json();
+};

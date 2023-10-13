@@ -7,6 +7,7 @@ import LoginFooter from "../../components/LoginFooter/LoginFooter.component";
 import LoginHeader from "../../components/LoginHeader/LoginHeader.component";
 import useActivitiesStore from "../../states/Activities.store";
 import useUserStore from "../../states/User.store";
+import { getLogs } from "../../http/requests";
 
 const LoginScreen = ({ navigation }: any) => {
   const [usernameText, setUsernameText] = useState("");
@@ -33,13 +34,8 @@ const LoginScreen = ({ navigation }: any) => {
       );
 
       if (response.status === 200) {
-        const resp = await fetch(
-          "https://carbon-api-production.up.railway.app/credit/list",
-          {
-            method: "GET",
-          },
-        );
-        for (const log of await resp.json()) {
+        const logs = await getLogs();
+        for (const log of logs) {
           createActivity(log.type, log.amount, new Date());
         }
         setSignedIn(true);
