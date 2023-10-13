@@ -27,6 +27,7 @@ https://github.com/alphalumen-hackathon/carbon-api
 Features:
   - Authentication
   - Carbon Credits Management
+  - Activity Management
   - Social Media Enviroment Management
   - Shop Management
 
@@ -35,7 +36,6 @@ Features:
 - React Native
 - Zustand
 - Google Maps API
-- Zustand
 - Typescript
 - NodeJS
 - Express
