@@ -1,11 +1,41 @@
+import { useState } from "react";
 import { View, Text, TextInput } from "react-native";
 
 import { styles } from "./Login.style";
 import LoginButton from "../../components/LoginButton/LoginButton.component";
 import LoginFooter from "../../components/LoginFooter/LoginFooter.component";
 import LoginHeader from "../../components/LoginHeader/LoginHeader.component";
+import useUserStore from "../../states/User.store";
 
 const LoginScreen = ({ navigation }: any) => {
+  const [usernameText, setUsernameText] = useState("");
+  const [passwordText, setPasswordText] = useState("");
+  const setSignedIn = useUserStore((state) => state.setSigned);
+
+  const login = async () => {
+    if (usernameText && passwordText) {
+      const data = {
+        username: usernameText,
+        password: passwordText,
+      };
+
+      const response = await fetch(
+        "https://carbon-api-production.up.railway.app/signin",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        },
+      );
+
+      if (response.status === 200) {
+        setSignedIn(true);
+      }
+    }
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.topAreaContainer}>
@@ -15,9 +45,17 @@ const LoginScreen = ({ navigation }: any) => {
             <Text style={styles.loginText}>Login</Text>
           </View>
           <View style={styles.inputAreaMainArea}>
-            <TextInput style={styles.textInput} placeholder="Username" />
-            <TextInput style={styles.textInput} placeholder="Password" />
-            <LoginButton text="Get In" />
+            <TextInput
+              style={styles.textInput}
+              placeholder="Username"
+              onChangeText={(newText) => setUsernameText(newText)}
+            />
+            <TextInput
+              style={styles.textInput}
+              placeholder="Password"
+              onChangeText={(newText) => setPasswordText(newText)}
+            />
+            <LoginButton text="Get In" onPress={() => login()} />
           </View>
         </View>
       </View>

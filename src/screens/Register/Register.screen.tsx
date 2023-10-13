@@ -22,7 +22,7 @@ const RegisterScreen = ({ navigation }: any) => {
               placeholder="Confirm password"
             />
 
-            <LoginButton text="Get Started" />
+            <LoginButton text="Get Started" onPress={() =>{}}/>
           </View>
         </View>
       </View>

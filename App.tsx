@@ -9,6 +9,7 @@ import LoginScreen from "./src/screens/Login/Login.screen";
 import RegisterScreen from "./src/screens/Register/Register.screen";
 import ShopScreen from "./src/screens/Shop/Shop.screen";
 import SocialScreen from "./src/screens/Social/Social.screen";
+import useUserStore from "./src/states/User.store";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -23,7 +24,7 @@ const TabNavigation = () => (
 );
 
 const App = () => {
-  const isSigned = false;
+  const isSigned = useUserStore((state) => state.isSigned);
 
   return (
     <NavigationContainer theme={DarkTheme}>
