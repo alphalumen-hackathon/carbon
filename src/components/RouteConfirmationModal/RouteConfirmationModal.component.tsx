@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import Svg, { Path } from "react-native-svg";
 
 import { styles } from "./RouteConfirmationModal.style";
+import { createLog } from "../../http/requests";
 import useActivitiesStore from "../../states/Activities.store";
 import useRouteStore from "../../states/Route.store";
 import useRouteModalStore, {
@@ -92,6 +93,7 @@ const RouteConfirmationModal = () => {
           onPress={() => {
             setRouteModalType(RouteModalType.EndNavigation);
             createActivity(chooseVehicle, choosenCredits, new Date());
+            createLog(choosenCredits, chooseVehicle);
           }}
         >
           <Text style={styles.confirmText}>Confirm</Text>
