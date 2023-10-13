@@ -3,9 +3,9 @@ import { View, Image, Text, TouchableOpacity, Modal } from "react-native";
 
 import PurchaseConfirmProps from "./PurchaseConfirm.props";
 import { styles } from "./PurchaseConfirm.style";
+import { createLog } from "../../http/requests";
 import useActivitiesStore from "../../states/Activities.store";
 import Currency from "../Currency/Currency.component";
-import { createLog } from "../../http/requests";
 
 const StatementLine = ({ title, value }: { title: string; value: number }) => (
   <View style={styles.statementLine}>
