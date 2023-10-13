@@ -71,20 +71,30 @@ const HomeScreen = () => {
     longitude: tuple[1],
   }));
 
+  const renderMarkers = () => {
+    if (coords[0] && coords[coords.length - 1]) {
+      return (
+        <>
+          <Marker
+            coordinate={coords[0]}
+            title="Origin"
+            description={originAddress}
+          />
+          <Marker
+            coordinate={coords[coords.length - 1]}
+            title="Destination"
+            description={destinationAddress}
+          />
+        </>
+      );
+    }
+  };
+
   return (
     <View style={styles.container}>
       <MapView style={styles.map}>
         <Polyline coordinates={coords} strokeWidth={5} strokeColor="black" />
-        <Marker
-          coordinate={coords[0]}
-          title="Origin"
-          description={originAddress}
-        />
-        <Marker
-          coordinate={coords[coords.length - 1]}
-          title="Destination"
-          description={destinationAddress}
-        />
+        {renderMarkers()}
       </MapView>
 
       <Modal
