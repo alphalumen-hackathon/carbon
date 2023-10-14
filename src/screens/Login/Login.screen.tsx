@@ -58,10 +58,19 @@ const LoginScreen = ({ navigation }: any) => {
             <TextInput
               style={styles.textInput}
               placeholder="Username"
+              textContentType="username"
+              autoCapitalize="none"
+              autoComplete="username"
+              autoCorrect={false}
               onChangeText={(newText) => setUsernameText(newText)}
             />
             <TextInput
               style={styles.textInput}
+              secureTextEntry
+              textContentType="password"
+              autoCapitalize="none"
+              autoComplete="current-password"
+              autoCorrect={false}
               placeholder="Password"
               onChangeText={(newText) => setPasswordText(newText)}
             />

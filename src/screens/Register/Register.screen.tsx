@@ -58,15 +58,29 @@ const RegisterScreen = ({ navigation }: any) => {
             <TextInput
               style={styles.textInput}
               placeholder="Username"
+              textContentType="username"
+              autoCapitalize="none"
+              autoComplete="username-new"
+              autoCorrect={false}
               onChangeText={(newText) => setUsernameText(newText)}
             />
             <TextInput
               style={styles.textInput}
+              secureTextEntry
+              textContentType="newPassword"
+              autoCapitalize="none"
+              autoComplete="new-password"
+              autoCorrect={false}
               placeholder="Password"
               onChangeText={(newText) => setPasswordText(newText)}
             />
             <TextInput
               style={styles.textInput}
+              secureTextEntry
+              textContentType="newPassword"
+              autoCapitalize="none"
+              autoComplete="new-password"
+              autoCorrect={false}
               placeholder="Confirm password"
               onChangeText={(newText) => setPasswordConfirmationText(newText)}
             />
