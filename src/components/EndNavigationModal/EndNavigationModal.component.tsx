@@ -9,7 +9,7 @@ import TopModalButton from "../TopModalButton/TopModalButton.component";
 
 const EndNavigationModal = () => {
   const setRouteModalType = useRouteModalStore((state) => state.setModalType);
-  const setRouteModalVisible = useRouteModalStore((state) => state.setVisibile);
+  const setRouteModalVisible = useRouteModalStore((state) => state.setVisible);
   const setRoute = useRouteStore((state) => state.setRoute);
 
   return (

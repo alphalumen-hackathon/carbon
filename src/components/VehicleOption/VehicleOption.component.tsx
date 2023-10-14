@@ -1,5 +1,5 @@
 import { FontAwesome5 } from "@expo/vector-icons";
-import { View, Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import { Path, Svg } from "react-native-svg";
 
 import VehicleOptionProps from "./VehicleOption.props";
@@ -25,16 +25,16 @@ const IconCarbonCredits = (color: string) => (
 );
 
 const VehicleOption = (props: VehicleOptionProps) => {
-  const { vehicleName, credits, iconName, nocarbon } = props;
+  const { vehicleName, credits, iconName, carbonFree } = props;
   const setRouteModalType = useRouteModalStore((state) => state.setModalType);
-  const setChooseVehicle = useRouteStore((state) => state.setChoosenVehicle);
-  const setChoosenCredits = useRouteStore((state) => state.setChoosenCredits);
+  const setChooseVehicle = useRouteStore((state) => state.setChosenVehicle);
+  const setChosenCredits = useRouteStore((state) => state.setChosenCredits);
 
   const isCreditNegative = credits < 0;
   const creditColor = isCreditNegative ? "#EF3838" : "#02D06D";
 
   const CarbonCredits = () => {
-    if (!nocarbon) {
+    if (!carbonFree) {
       return (
         <>
           {IconCarbonCredits(creditColor)}
@@ -51,10 +51,10 @@ const VehicleOption = (props: VehicleOptionProps) => {
     <TouchableOpacity
       style={styles.container}
       onPress={() => {
-        if (nocarbon) return;
+        if (carbonFree) return;
         setRouteModalType(RouteModalType.VehicleConfirmation);
         setChooseVehicle(vehicleName);
-        setChoosenCredits(credits);
+        setChosenCredits(credits);
       }}
     >
       <View style={styles.header}>

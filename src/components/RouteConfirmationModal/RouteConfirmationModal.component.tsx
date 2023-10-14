@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import Svg, { Path } from "react-native-svg";
 
 import { styles } from "./RouteConfirmationModal.style";
@@ -29,15 +29,15 @@ const IconCarbonCredits = (color: string) => (
 
 const RouteConfirmationModal = () => {
   const setRouteModalType = useRouteModalStore((state) => state.setModalType);
-  const setModalVisible = useRouteModalStore((state) => state.setVisibile);
+  const setModalVisible = useRouteModalStore((state) => state.setVisible);
   const routeDistance = useRouteStore((state) => state.route.distance);
   const chooseVehicle = useRouteStore((state) => state.chooseVehicle);
-  const choosenCredits = useRouteStore((state) => state.choosenCredits);
+  const chosenCredits = useRouteStore((state) => state.chosenCredits);
   const createActivity = useActivitiesStore((state) => state.create);
   const destinationAddress = useRouteStore((state) => state.destinationAddress);
   const setRoute = useRouteStore((state) => state.setRoute);
 
-  const creditColor = choosenCredits < 0 ? "#EF3838" : "#02D06D";
+  const creditColor = chosenCredits < 0 ? "#EF3838" : "#02D06D";
 
   return (
     <View style={styles.modalView}>
@@ -53,7 +53,7 @@ const RouteConfirmationModal = () => {
           vehicleName={chooseVehicle}
           credits={0}
           iconName={chooseVehicle.toLowerCase()}
-          nocarbon
+          carbonFree
         />
         <View style={styles.destinationInfo}>
           <View style={styles.locationInfoArea}>
@@ -73,9 +73,9 @@ const RouteConfirmationModal = () => {
               <Text
                 style={{ color: creditColor, fontWeight: "bold", fontSize: 20 }}
               >
-                {choosenCredits > 0 ? "+" : ""}
+                {chosenCredits > 0 ? "+" : ""}
 
-                {choosenCredits}
+                {chosenCredits}
               </Text>
             </View>
 
@@ -92,8 +92,8 @@ const RouteConfirmationModal = () => {
           style={styles.confirmationButton}
           onPress={() => {
             setRouteModalType(RouteModalType.EndNavigation);
-            createActivity(chooseVehicle, choosenCredits, new Date());
-            createLog(choosenCredits, chooseVehicle);
+            createActivity(chooseVehicle, chosenCredits, new Date());
+            createLog(chosenCredits, chooseVehicle);
           }}
         >
           <Text style={styles.confirmText}>Confirm</Text>

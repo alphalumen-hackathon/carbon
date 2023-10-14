@@ -15,11 +15,11 @@ type RouteState = {
   destinationAddress: string;
   route: Route;
   chooseVehicle: string;
-  choosenCredits: number;
+  chosenCredits: number;
   setDestinationCoords: (coords: LatLng) => void;
   setRoute: (route: Route) => void;
-  setChoosenVehicle: (vehicle: string) => void;
-  setChoosenCredits: (credits: number) => void;
+  setChosenVehicle: (vehicle: string) => void;
+  setChosenCredits: (credits: number) => void;
   setOriginAddress: (addr: string) => void;
   setDestinationAddress: (addr: string) => void;
 
@@ -33,14 +33,14 @@ const useRouteStore = create<RouteState>((set) => ({
   destinationAddress: "",
   route: { distance: 0, polyline: "" },
   chooseVehicle: "",
-  choosenCredits: 0,
+  chosenCredits: 0,
   setDestinationCoords: (coords: LatLng) =>
     set(() => ({ destinationCoords: coords })),
   setRoute: (route: Route) => set(() => ({ route })),
-  setChoosenVehicle: (vehicle: string) =>
+  setChosenVehicle: (vehicle: string) =>
     set(() => ({ chooseVehicle: vehicle })),
-  setChoosenCredits: (credits: number) =>
-    set(() => ({ choosenCredits: credits })),
+  setChosenCredits: (credits: number) =>
+    set(() => ({ chosenCredits: credits })),
   setOriginAddress: (addr: string) => set(() => ({ originAddress: addr })),
   setDestinationAddress: (addr: string) =>
     set(() => ({ destinationAddress: addr })),

@@ -3,19 +3,15 @@ import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplet
 import AddressAutocompleteInputProps from "./AddressAutocompleteInput.props";
 
 const AddressAutocompleteInput = (props: AddressAutocompleteInputProps) => {
-  const { style, placeholder, onSelected } = props;
-
   return (
     <GooglePlacesAutocomplete
-      placeholder={placeholder}
-      styles={style}
+      placeholder={props.placeholder}
+      styles={props.style}
       query={{
-        key: "AIzaSyCirXsoS-iH2CgbrfVPvnJB65cNHWmRhf0",
-        language: "pt-BR",
+        key: process.env.GOOGLE_PLACES_API_KEY,
+        language: "en-US",
       }}
-      onPress={(data, details = null) => {
-        onSelected(data.description);
-      }}
+      onPress={(data) => props.onSelected(data.description)}
     />
   );
 };

@@ -118,7 +118,7 @@ const IconsSvg = {
   ),
 } as Record<string, React.FC>;
 
-const Navbar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
+const Navbar = ({ state, navigation }: BottomTabBarProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.margin}>

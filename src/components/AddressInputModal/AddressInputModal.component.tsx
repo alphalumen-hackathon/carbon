@@ -11,14 +11,20 @@ import AddressAutocompleteInput from "../AddressAutocompleteInput/AddressAutocom
 
 const AddressInputModal = (props: AddressInputModalProps) => {
   const { title, onPress } = props;
-  const setOriginAddress = useRouteStore((state) => state.setOriginAddress);
-  const setDestinationAddress = useRouteStore(
-    (state) => state.setDestinationAddress,
+
+  const { setOriginAddress, setDestinationAddress } = useRouteStore(
+    (state) => ({
+      setOriginAddress: state.setOriginAddress,
+      setDestinationAddress: state.setDestinationAddress,
+    }),
   );
 
-  const setModalType = useRouteModalStore((state) => state.setModalType);
-  const setModalVisible = useRouteModalStore((state) => state.setVisibile);
+  const { setModalType, setModalVisible } = useRouteModalStore((state) => ({
+    setModalType: state.setModalType,
+    setModalVisible: state.setVisible,
+  }));
 
+  // Handle location selection
   const onLocationSelected = (addr: string) => {
     if (title.toLowerCase() === "from") {
       setOriginAddress(addr);
