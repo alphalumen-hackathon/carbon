@@ -10,7 +10,7 @@
 <br/>
 
 
-<h2 >Introducing <Text style="color: #02D06D">Carbon Credits</Text></h2>
+<h2>Introducing <Text style="color: #02D06D">Carbon Credits</Text></h2>
 
 The core of Carbon are <Text style="color: #02D06D">Carbon Credits</Text>,  used to track the carbon emission on the atmosphere by the user. Long walks results in earning credits, while using vehicles results in loosing them.
 

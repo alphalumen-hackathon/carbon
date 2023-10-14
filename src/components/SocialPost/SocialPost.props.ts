@@ -1,5 +1,7 @@
 export default interface SocialPostProps {
+  user: { username: string };
   following: boolean;
-  credits: number;
+  amount: number;
   type: string;
+  createdAt: string;
 }

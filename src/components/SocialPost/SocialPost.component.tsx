@@ -1,4 +1,5 @@
-import { View, Text } from "react-native";
+import { useMemo } from "react";
+import { Text, View } from "react-native";
 import Svg, { Path } from "react-native-svg";
 
 import SocialPostProps from "./SocialPost.props";
@@ -21,25 +22,30 @@ const IconCarbonCredits = (color: string) => (
 );
 
 const SocialPost = (props: SocialPostProps) => {
-  const { following, credits, type } = props;
+  const textColor = props.amount < 0 ? "#EF3838" : "#02D06D";
 
-  const textColor = credits < 0 ? "#EF3838" : "#02D06D";
+  const date = useMemo(
+    () => new Date(props.createdAt).toLocaleDateString(),
+    [props.createdAt],
+  );
 
   return (
     <View style={styles.container}>
       <View style={styles.infoColumn}>
         <View style={styles.topInfoArea}>
-          <Text style={styles.userText}>Username • 10/15/2023</Text>
+          <Text style={styles.userText}>
+            {props.user.username} • {date}
+          </Text>
         </View>
         <View style={styles.bottomInfoArea}>
           {IconCarbonCredits(textColor)}
           <Text style={{ color: textColor, fontWeight: "bold", fontSize: 17 }}>
-            {credits} • {type}
+            {props.amount} • {props.type}
           </Text>
         </View>
       </View>
       <View style={styles.followColumn}>
-        <FollowButton following={following} />
+        <FollowButton following={props.following} user={props.user} />
       </View>
     </View>
   );
