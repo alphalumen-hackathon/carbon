@@ -66,7 +66,6 @@ const RegisterScreen = ({ navigation }: any) => {
             />
             <TextInput
               style={styles.textInput}
-              secureTextEntry
               textContentType="newPassword"
               autoCapitalize="none"
               autoComplete="new-password"
@@ -76,7 +75,6 @@ const RegisterScreen = ({ navigation }: any) => {
             />
             <TextInput
               style={styles.textInput}
-              secureTextEntry
               textContentType="newPassword"
               autoCapitalize="none"
               autoComplete="new-password"
