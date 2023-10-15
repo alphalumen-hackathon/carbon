@@ -18,14 +18,18 @@ export const requestRoute = async (
     },
     travelMode,
     routingPreference: "TRAFFIC_AWARE",
-    departureTime: "2023-10-15T15:01:23.045123456Z",
+    departureTime: new Date(
+      // One hour in the future.
+      // The API doesn't accept a departure time before the current time.
+      new Date().getTime() + 60 * 60 * 1000,
+    ).toISOString(),
     computeAlternativeRoutes: false,
     routeModifiers: {
       avoidTolls: false,
       avoidHighways: false,
       avoidFerries: false,
     },
-    languageCode: "pt-BR",
+    languageCode: "en-US",
     units: "METRIC",
   };
 
