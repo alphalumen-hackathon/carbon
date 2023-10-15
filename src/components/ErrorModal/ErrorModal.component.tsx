@@ -1,13 +1,11 @@
 import { Modal, View, TouchableOpacity, Text } from "react-native";
 
+import ErrorModalProps from "./ErroModal.props";
 import { styles } from "./ErrorModal.style";
 
-type ErrorModalProps = {
-  visible: boolean;
-  setVisible: (value: boolean) => void;
-};
+const ErrorModalComponent = (props: ErrorModalProps) => {
+  const { visible, setVisible } = props;
 
-const ErrorModalComponent = ({ visible, setVisible }: ErrorModalProps) => {
   return (
     <Modal visible={visible} style={styles.modal} transparent>
       <View style={styles.modalContainer}>
