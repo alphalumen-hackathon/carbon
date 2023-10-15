@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
   vehicleHeaderText: {
     color: "#BEBEBE",
     fontWeight: "bold",
-    fontSize: 19,
+    fontSize: 20,
   },
   vehicleMiddle: {
     display: "flex",
@@ -96,11 +96,11 @@ export const styles = StyleSheet.create({
   destinationText: {
     color: "white",
     fontWeight: "bold",
-    fontSize: 18,
+    fontSize: 20,
   },
   distanceText: {
     color: "#BEBEBE",
-    fontSize: 13,
+    fontSize: 16,
   },
   confirmationButton: {
     width: "100%",
@@ -132,11 +132,11 @@ export const styles = StyleSheet.create({
   confirmText: {
     color: "white",
     fontWeight: "bold",
-    fontSize: 18,
+    fontSize: 20,
   },
   cancelText: {
     color: "#BEBEBE",
     fontWeight: "bold",
-    fontSize: 15,
+    fontSize: 16,
   },
 });

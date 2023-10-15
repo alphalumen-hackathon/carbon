@@ -8,7 +8,7 @@ const AddressAutocompleteInput = (props: AddressAutocompleteInputProps) => {
       placeholder={props.placeholder}
       styles={props.style}
       query={{
-        key: process.env.GOOGLE_PLACES_API_KEY,
+        key: "AIzaSyCirXsoS-iH2CgbrfVPvnJB65cNHWmRhf0",
         language: "en-US",
       }}
       onPress={(data) => props.onSelected(data.description)}

@@ -38,6 +38,6 @@ export const styles = StyleSheet.create({
   headerText: {
     color: "#BEBEBE",
     fontWeight: "bold",
-    fontSize: 19,
+    fontSize: 20,
   },
 });

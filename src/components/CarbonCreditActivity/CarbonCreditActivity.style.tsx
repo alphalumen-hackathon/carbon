@@ -4,9 +4,9 @@ export const styles = StyleSheet.create({
   container: {
     marginHorizontal: 10,
     height: 70,
-    backgroundColor: "#333",
+    backgroundColor: "#070707",
     borderRadius: 8,
-    shadowColor: "#aaa",
+    shadowColor: "#777",
     shadowOffset: { width: 5, height: 7 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
@@ -29,13 +29,13 @@ export const styles = StyleSheet.create({
     borderLeftWidth: 1,
   },
   credits: {
-    fontSize: 30,
+    fontSize: 24,
     color: "white",
     fontWeight: "bold",
   },
   creditsLabel: {
     color: "#D3D3D3",
-    fontSize: 10,
+    fontSize: 16,
   },
   description: {
     color: "white",
@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
   },
   date: {
     color: "#D3D3D3",
-    fontSize: 15,
+    fontSize: 16,
     marginTop: 5,
   },
 });

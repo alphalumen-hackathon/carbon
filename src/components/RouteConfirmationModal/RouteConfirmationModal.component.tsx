@@ -80,7 +80,7 @@ const RouteConfirmationModal = () => {
             </View>
 
             <Text
-              style={{ color: creditColor, fontWeight: "bold", fontSize: 12 }}
+              style={{ color: creditColor, fontWeight: "bold", fontSize: 16 }}
             >
               carbon credits
             </Text>

@@ -17,12 +17,6 @@ export const styles = StyleSheet.create({
     fontSize: 23,
     fontWeight: "bold",
   },
-  carbonCreditsValue: {
-    color: "#02D06D",
-    fontSize: 100,
-    padding: 10,
-    fontWeight: "bold",
-  },
   activityArea: {
     gap: 15,
   },

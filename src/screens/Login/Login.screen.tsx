@@ -3,6 +3,7 @@ import { View, Text, TextInput } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 import { styles } from "./Login.style";
+import ErrorModal from "../../components/ErrorModal/ErrorModal.component";
 import LoginButton from "../../components/LoginButton/LoginButton.component";
 import LoginFooter from "../../components/LoginFooter/LoginFooter.component";
 import LoginHeader from "../../components/LoginHeader/LoginHeader.component";
@@ -16,6 +17,7 @@ const LoginScreen = ({ navigation }: any) => {
   const setSignedIn = useUserStore((state) => state.setSigned);
   const setUsername = useUserStore((state) => state.setUsername);
   const createActivity = useActivitiesStore((state) => state.create);
+  const [errorModalVisible, setErrorModalVisible] = useState(false);
 
   const login = async () => {
     if (usernameText && passwordText) {
@@ -42,12 +44,20 @@ const LoginScreen = ({ navigation }: any) => {
         }
         setSignedIn(true);
         setUsername(usernameText);
+      } else {
+        setErrorModalVisible(true);
       }
+    } else {
+      setErrorModalVisible(true);
     }
   };
 
   return (
     <KeyboardAwareScrollView style={styles.container}>
+      <ErrorModal
+        visible={errorModalVisible}
+        setVisible={(value: boolean) => setErrorModalVisible(value)}
+      />
       <View style={styles.topAreaContainer}>
         <LoginHeader />
         <View style={styles.inputArea}>

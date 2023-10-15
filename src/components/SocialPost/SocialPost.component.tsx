@@ -39,7 +39,7 @@ const SocialPost = (props: SocialPostProps) => {
         </View>
         <View style={styles.bottomInfoArea}>
           {IconCarbonCredits(textColor)}
-          <Text style={{ color: textColor, fontWeight: "bold", fontSize: 17 }}>
+          <Text style={{ color: textColor, fontWeight: "bold", fontSize: 16 }}>
             {props.amount} • {props.type}
           </Text>
         </View>

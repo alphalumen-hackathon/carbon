@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
   },
   fromText: {
     fontWeight: "bold",
-    fontSize: 25,
+    fontSize: 24,
     color: "#02D06D",
   },
   inputArea: {

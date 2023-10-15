@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
   headerText: {
     color: "#02D06D",
     fontWeight: "bold",
-    fontSize: 17,
+    fontSize: 16,
   },
   scrollContainer: {
     width: "100%",

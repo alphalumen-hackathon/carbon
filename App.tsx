@@ -25,7 +25,6 @@ const TabNavigation = () => (
     <Tab.Screen name="Shop" component={ShopScreen} />
   </Tab.Navigator>
 );
-
 const App = () => {
   const isSigned = useUserStore((state) => state.isSigned);
 

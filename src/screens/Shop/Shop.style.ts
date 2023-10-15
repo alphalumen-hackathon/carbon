@@ -14,7 +14,6 @@ export const styles = StyleSheet.create({
   },
   header: {
     width: "100%",
-    height: "8%",
   },
   balanceContainer: {
     width: "100%",
@@ -30,14 +29,12 @@ export const styles = StyleSheet.create({
   },
   title: {
     color: "#02D06D",
-    width: "100%",
-    fontSize: 45,
+    fontSize: 40,
     fontWeight: "bold",
   },
   subtitle: {
     color: "#BEBEBE",
-    width: "100%",
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: "200",
   },
   featuredProductsLabel: {

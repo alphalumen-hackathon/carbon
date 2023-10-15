@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
     height: 60,
     justifyContent: "center",
     paddingLeft: 15,
-    fontSize: 17,
+    fontSize: 16,
     color: "#BEBEBE",
   },
   inputArea: {

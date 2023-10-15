@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
   topAreaText: {
     color: "#02D06D",
     fontWeight: "bold",
-    fontSize: 22,
+    fontSize: 20,
   },
   topAreaContainer: {
     borderBottomWidth: StyleSheet.hairlineWidth,

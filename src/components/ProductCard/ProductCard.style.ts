@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   },
   name: {
     color: "white",
-    fontSize: 45,
+    fontSize: 40,
     fontWeight: "bold",
   },
   bottom: {

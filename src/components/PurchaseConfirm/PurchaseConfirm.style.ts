@@ -66,12 +66,12 @@ export const styles = StyleSheet.create({
   confirmText: {
     color: "white",
     fontWeight: "bold",
-    fontSize: 22,
+    fontSize: 20,
   },
   cancelText: {
     color: "#BEBEBE",
     fontWeight: "bold",
-    fontSize: 22,
+    fontSize: 20,
   },
   productName: {
     color: "white",
@@ -90,7 +90,7 @@ export const styles = StyleSheet.create({
   },
   statementLineTitle: {
     color: "white",
-    fontSize: 15,
+    fontSize: 16,
   },
   divisor: {
     width: "100%",

@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
   userText: {
     color: "white",
     fontWeight: "normal",
-    fontSize: 17,
+    fontSize: 16,
   },
   bottomInfoArea: {
     display: "flex",
