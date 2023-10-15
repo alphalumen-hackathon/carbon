@@ -4,7 +4,6 @@ import { styles } from "./DestinationSelectionModal.style";
 import useRouteModalStore, {
   RouteModalType,
 } from "../../states/RouteModal.store";
-import FavoriteLocation from "../FavoriteLocation/FavoriteLocation.component";
 import TopModalButton from "../TopModalButton/TopModalButton.component";
 
 const DestinationSelectionModal = () => {
@@ -19,8 +18,6 @@ const DestinationSelectionModal = () => {
       >
         <Text style={{ color: "#BEBEBE" }}>Where are we going?</Text>
       </TouchableOpacity>
-      <FavoriteLocation name="Av. São João" distance={147} />
-      <FavoriteLocation name="Rio de Janeiro" distance={264.5} />
     </View>
   );
 };

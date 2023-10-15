@@ -75,7 +75,7 @@ const AddressInputModal = (props: AddressInputModalProps) => {
         >
           <Text style={{ color: "#BEBEBE", fontWeight: "bold" }}>Cancel</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.touchable} onPress={() => onPress()}>
+        <TouchableOpacity style={styles.touchable} onPress={onPress}>
           <Svg width={30} height={30} viewBox="0 0 24 17" fill="none">
             <Path
               d="M23.8125 8.50002L0.187502 0.21643L5.2875 8.50002L0.187501 16.7836L23.8125 8.50002ZM19.9875 8.50002L3.2625 14.3578L6.88125 8.50002L19.9875 8.50002Z"

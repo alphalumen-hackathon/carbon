@@ -29,7 +29,11 @@ const BalanceCard = () => {
         </Svg>
       </View>
       <View style={styles.row}>
-        <Currency value={credits} size={25} />
+        <Currency
+          value={credits}
+          size={25}
+          style={{ justifyContent: "center", alignItems: "center", gap: 2 }}
+        />
         <Text style={styles.thinText}>{username}</Text>
       </View>
     </View>

@@ -16,7 +16,7 @@ const ArrowLeftButton = (props: ArrowLeftButtonProps) => {
   const { onPress } = props;
 
   return (
-    <TouchableOpacity onPress={() => onPress()}>
+    <TouchableOpacity onPress={onPress}>
       <IconArrowLeft />
     </TouchableOpacity>
   );

@@ -4,10 +4,10 @@ export const styles = StyleSheet.create({
   container: {
     marginHorizontal: 10,
     height: 70,
-    backgroundColor: "#070707",
+    backgroundColor: "#353535",
     borderRadius: 8,
-    shadowColor: "#777",
-    shadowOffset: { width: 5, height: 7 },
+    shadowColor: "#000",
+    shadowOffset: { width: 4, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
     elevation: 4,
@@ -44,7 +44,6 @@ export const styles = StyleSheet.create({
   },
   date: {
     color: "#D3D3D3",
-    fontSize: 16,
     marginTop: 5,
   },
 });

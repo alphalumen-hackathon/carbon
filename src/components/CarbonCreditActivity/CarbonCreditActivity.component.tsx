@@ -17,7 +17,7 @@ const CarbonCreditActivity = ({
         <Text adjustsFontSizeToFit numberOfLines={1} style={styles.description}>
           {description}
         </Text>
-        <Text style={styles.date}>
+        <Text style={styles.date} adjustsFontSizeToFit numberOfLines={1}>
           {date.toLocaleString().replace(",", "").replace(" ", " • ")}
         </Text>
       </View>

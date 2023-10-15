@@ -25,12 +25,4 @@ export const styles = StyleSheet.create({
     textDecorationColor: "#BEBEBE",
     justifyContent: "center",
   },
-
-  favoriteLocationArea: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "100%",
-    marginTop: 50,
-  },
 });
