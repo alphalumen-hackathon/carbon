@@ -1,5 +1,5 @@
 
-<img src="assets/Logo.png"/>
+<img src="assets/Logo.svg"/>
 <h1 style="color: #FFFFFF">
   Encouraging free-flow and carbon-free streets.
 </h1>

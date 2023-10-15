@@ -1,10 +1,18 @@
-import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import { Ref, forwardRef } from "react";
+import {
+  GooglePlacesAutocomplete,
+  GooglePlacesAutocompleteRef,
+} from "react-native-google-places-autocomplete";
 
 import AddressAutocompleteInputProps from "./AddressAutocompleteInput.props";
 
-const AddressAutocompleteInput = (props: AddressAutocompleteInputProps) => {
+const AddressAutocompleteInput = (
+  props: AddressAutocompleteInputProps,
+  ref: Ref<GooglePlacesAutocompleteRef>,
+) => {
   return (
     <GooglePlacesAutocomplete
+      ref={ref}
       placeholder={props.placeholder}
       styles={props.style}
       query={{
@@ -16,4 +24,4 @@ const AddressAutocompleteInput = (props: AddressAutocompleteInputProps) => {
   );
 };
 
-export default AddressAutocompleteInput;
+export default forwardRef(AddressAutocompleteInput);
