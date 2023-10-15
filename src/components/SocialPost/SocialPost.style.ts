@@ -7,6 +7,8 @@ export const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     marginBottom: 15,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderColor: "#BEBEBE",
   },
   infoColumn: {
     flex: 1,
@@ -24,7 +26,6 @@ export const styles = StyleSheet.create({
   userText: {
     color: "white",
     fontWeight: "normal",
-    fontSize: 16,
   },
   bottomInfoArea: {
     display: "flex",

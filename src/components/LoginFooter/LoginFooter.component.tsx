@@ -9,7 +9,7 @@ const LoginFooter = (props: LoginFooterProps) => {
   return (
     <View style={styles.bottomAreaContainer}>
       <Text style={styles.bottomText}>{text}</Text>
-      <Pressable onPress={() => linkOnPress()}>
+      <Pressable onPress={linkOnPress}>
         <Text style={styles.bottomTextGreen}>{linkText}</Text>
       </Pressable>
     </View>

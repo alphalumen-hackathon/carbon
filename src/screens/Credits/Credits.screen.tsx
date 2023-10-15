@@ -13,7 +13,16 @@ const CreditsScreen = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.creditsArea}>
         <Text style={styles.carbonCreditsLabel}>Carbon credits</Text>
-        <Currency size={80} style={{ padding: 10 }} value={totalCredits} />
+        <Currency
+          size={80}
+          style={{
+            padding: 10,
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 15,
+          }}
+          value={totalCredits}
+        />
       </View>
 
       <ScrollView>

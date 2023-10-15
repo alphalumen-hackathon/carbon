@@ -129,7 +129,13 @@ const Navbar = ({ state, navigation }: BottomTabBarProps) => {
           const Selected = () => (
             <View style={styles.selected}>
               <Icon />
-              <Text style={styles.routeName}>{route.name}</Text>
+              <Text
+                style={styles.routeName}
+                adjustsFontSizeToFit
+                numberOfLines={1}
+              >
+                {route.name}
+              </Text>
             </View>
           );
 

@@ -45,10 +45,6 @@ const ShopScreen = () => {
       <View style={styles.margin}>
         <View style={styles.header}>
           <Text style={styles.title}>Shop</Text>
-
-          <Text style={styles.subtitle}>
-            Exchange your carbon credits for products
-          </Text>
         </View>
 
         <View style={styles.balanceContainer}>

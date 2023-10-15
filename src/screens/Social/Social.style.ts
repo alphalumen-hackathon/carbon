@@ -13,13 +13,15 @@ export const styles = StyleSheet.create({
     display: "flex",
     width: "100%",
     flexDirection: "column",
-    gap: 10,
+    justifyContent: "center",
+    alignItems: "center",
     marginBottom: 25,
+    marginTop: 5,
   },
   socialText: {
-    color: "#02D06D",
+    color: "white",
     fontWeight: "bold",
-    fontSize: 40,
+    fontSize: 24,
   },
   subtitle: {
     color: "white",

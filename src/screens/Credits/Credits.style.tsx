@@ -11,10 +11,11 @@ export const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    marginTop: 5,
   },
   carbonCreditsLabel: {
     color: "white",
-    fontSize: 23,
+    fontSize: 24,
     fontWeight: "bold",
   },
   activityArea: {

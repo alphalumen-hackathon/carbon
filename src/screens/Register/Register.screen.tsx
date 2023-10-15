@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { View, Text, TextInput } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
@@ -7,6 +7,8 @@ import ErrorModal from "../../components/ErrorModal/ErrorModal.component";
 import LoginButton from "../../components/LoginButton/LoginButton.component";
 import LoginFooter from "../../components/LoginFooter/LoginFooter.component";
 import LoginHeader from "../../components/LoginHeader/LoginHeader.component";
+import { createLog } from "../../http/requests";
+import useActivitiesStore from "../../states/Activities.store";
 import useUserStore from "../../states/User.store";
 
 const RegisterScreen = ({ navigation }: any) => {
@@ -16,6 +18,10 @@ const RegisterScreen = ({ navigation }: any) => {
   const [errorModalVisible, setErrorModalVisible] = useState(false);
   const setSignedIn = useUserStore((state) => state.setSigned);
   const setUsername = useUserStore((state) => state.setUsername);
+  const createActivity = useActivitiesStore((state) => state.create);
+
+  const password = useRef<TextInput>(null);
+  const confirmPassword = useRef<TextInput>(null);
 
   const register = async () => {
     if (
@@ -40,6 +46,8 @@ const RegisterScreen = ({ navigation }: any) => {
       );
 
       if (response.status === 201) {
+        await createLog(200, "Monthly Credits");
+        createActivity("Monthly Credts", 200, new Date());
         setSignedIn(true);
         setUsername(usernameText);
       }
@@ -63,33 +71,43 @@ const RegisterScreen = ({ navigation }: any) => {
           <View style={styles.inputAreaMainArea}>
             <TextInput
               style={styles.textInput}
+              returnKeyType="next"
               placeholder="Username"
               textContentType="username"
               autoCapitalize="none"
               autoComplete="username-new"
               autoCorrect={false}
+              onSubmitEditing={() => password.current?.focus()}
               onChangeText={(newText) => setUsernameText(newText)}
             />
             <TextInput
+              ref={password}
               style={styles.textInput}
+              secureTextEntry
+              returnKeyType="next"
               textContentType="newPassword"
               autoCapitalize="none"
               autoComplete="new-password"
               autoCorrect={false}
               placeholder="Password"
+              onSubmitEditing={() => confirmPassword.current?.focus()}
               onChangeText={(newText) => setPasswordText(newText)}
             />
             <TextInput
+              ref={confirmPassword}
               style={styles.textInput}
-              textContentType="newPassword"
+              secureTextEntry
+              returnKeyType="done"
+              textContentType="password"
               autoCapitalize="none"
               autoComplete="new-password"
               autoCorrect={false}
               placeholder="Confirm password"
+              onSubmitEditing={register}
               onChangeText={(newText) => setPasswordConfirmationText(newText)}
             />
 
-            <LoginButton text="Get Started" onPress={() => register()} />
+            <LoginButton text="Get Started" onPress={register} />
           </View>
         </View>
       </View>

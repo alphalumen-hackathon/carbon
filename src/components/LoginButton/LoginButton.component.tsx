@@ -7,7 +7,7 @@ const LoginButton = (props: LoginButtonProps) => {
   const { text, onPress } = props;
 
   return (
-    <TouchableOpacity style={styles.confirmButton} onPress={() => onPress()}>
+    <TouchableOpacity style={styles.confirmButton} onPress={onPress}>
       <Text style={styles.buttonText}>{text}</Text>
     </TouchableOpacity>
   );

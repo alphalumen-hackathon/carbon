@@ -13,10 +13,8 @@ type ActivitiesState = {
 };
 
 const useActivitiesStore = create<ActivitiesState>((set) => ({
-  activities: [
-    { description: "Monthly credits", credits: 200, date: new Date() },
-  ],
-  totalCredits: 200,
+  activities: [],
+  totalCredits: 0,
 
   create: (description: string, credits: number, date: Date) => {
     useActivitiesStore.getState().totalCredits += credits;

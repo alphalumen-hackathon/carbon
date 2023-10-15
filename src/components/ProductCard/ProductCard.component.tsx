@@ -19,7 +19,11 @@ const ProductCard = ({ item, onPress }: ProductCardProps) => {
           </View>
 
           <View style={styles.priceTag}>
-            <Currency value={item.price} size={20} />
+            <Currency
+              value={item.price}
+              size={20}
+              style={{ justifyContent: "center", alignItems: "center" }}
+            />
           </View>
         </View>
 

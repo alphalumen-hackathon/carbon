@@ -63,7 +63,7 @@ const ConfirmModal = ({ item, onDismiss }: PurchaseConfirmProps) => {
               styles.confirmationButton,
               !canPurchase && { backgroundColor: "#964242" },
             ]}
-            onPress={() => buyItem()}
+            onPress={buyItem}
           >
             <Text style={styles.confirmText}>
               {balance >= item.price ? "Confirm" : "Not enough credits"}

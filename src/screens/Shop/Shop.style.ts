@@ -14,6 +14,8 @@ export const styles = StyleSheet.create({
   },
   header: {
     width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
   },
   balanceContainer: {
     width: "100%",
@@ -28,8 +30,8 @@ export const styles = StyleSheet.create({
     width: "100%",
   },
   title: {
-    color: "#02D06D",
-    fontSize: 40,
+    color: "white",
+    fontSize: 24,
     fontWeight: "bold",
   },
   subtitle: {
