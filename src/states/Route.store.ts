@@ -58,6 +58,7 @@ const useRouteStore = create<RouteState>((set) => ({
       longitude: originCoordsResponse.lng,
     };
 
+    // Extract destination address from the state and format it for API request
     const destination = useRouteStore
       .getState()
       .destinationAddress.replace(/ /g, "+");

@@ -15,18 +15,17 @@ const FollowButton = (props: FollowButtonProps) => {
 
       const response = await fetch(
         `https://carbon-api-production.up.railway.app/${route}/${props.user.username}`,
-        {
-          method: "GET",
-        },
+        { method: "GET" },
       );
 
-      if (response.ok) {
-        setIsFollowing(!isFollowing);
-      } else {
+      if (!response.ok) {
+        // Catch any errors that may occur during the process and
+        // "rollback" the changes to the state.
         setIsFollowing(isFollowing);
         console.error("Failed to follow/unfollow user");
       }
     } catch (error) {
+      // Same as above.
       setIsFollowing(isFollowing);
       console.error("Error following/unfollowing user:", error);
     }

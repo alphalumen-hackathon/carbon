@@ -19,8 +19,9 @@ export const requestRoute = async (
     travelMode,
     routingPreference: "TRAFFIC_AWARE",
     departureTime: new Date(
-      // One hour in the future.
-      // The API doesn't accept a departure time before the current time.
+      // Set the departure time for the route request.
+      // It's set to one hour in the future from the current time to ensure
+      // it's valid, as the API doesn't accept departure times in the past.
       new Date().getTime() + 60 * 60 * 1000,
     ).toISOString(),
     computeAlternativeRoutes: false,
@@ -33,6 +34,7 @@ export const requestRoute = async (
     units: "METRIC",
   };
 
+  // Make a POST request to the Google Maps Directions API to compute the route.
   const response = await fetch(
     "https://routes.googleapis.com/directions/v2:computeRoutes",
     {
